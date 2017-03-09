@@ -267,12 +267,12 @@ char nahled(char boi[20]){
 	printf("|  _    ||   _   |   ___|   ||    ___||   |___ |    ___||  _    ||   _   |  NA ZA%c%cTEK SCH., DOPROST%CED SCH.\n", CZ, AA, RZ);
 	printf("| | |   ||  | |  |  |       ||   |___ |       ||   |___ | | |   ||  | |  |  BEZ SPEC. REKVIZIT\n");
 	printf("|_|  |__||__| |__|  |_______||_______||_______||_______||_|  |__||__| |__|  \n \n");
-	printf("REKVIZITY:%c%ctek na zav%cz%cn%c o%c%c, st%cl                                                   (             )  \n", sz, aa, aa, aa, ii, cz, ii, uk);
+	printf("REKVIZITY:%c%ctek na zav%cz%cn%c o%c%c, st%cl                                                     (             )  \n", sz, aa, aa, aa, ii, cz, ii, uk);
  	printf("PRAVIDLA:Jeden %clov%ck je myslivec, ostatn%c jsou jeleni. C%clem myslivce je dotykem chytit   `--(_   _)--'     \n", cz, ie, ii, ii);
 	printf("a vy%cadit jeleny a jeleni se sna%c%c se mu vyhnout a z%cstat posledn%c. Jeleni i myslivci se        Y-Y          \n", rz, zs, ii, uk, ii);
     printf("mohou pohybovat pouze v lese, co%c je st%cl, kter%cho se mus%c v%cichni st%cle dot%ckat. Stolu        /@@ \\         \n",zs, uk, ee, ii, sz, aa, yy); 
     printf("se lid%c mohou dot%ckat pouze zeshora.                                                          /     \\          \n", ee, yy);
-    printf("                                                                                              `--'.  \\             ,\n");
+    printf("ALTERNATIVN%c PRAVIDLA:Zak%czat/povolit h%cb%cn%c stoly.                                           `--'.  \\             ,\n", II, aa, yy, aa, ii	);
     printf("                                                                                                   |   `.__________/)     \n");
 	}
 
