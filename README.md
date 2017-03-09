@@ -1,0 +1,2 @@
+# SKTDB
+Skautská databáze her
