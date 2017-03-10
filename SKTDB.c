@@ -55,7 +55,7 @@ if(strncmp(input,"#", 1)==0){
    nahled(input);
 	goto LOOP;
 }
-if(strncmp(input,"dementball", 9)==0 || (strncmp(input,"najelena", 9)==0 ) || (strncmp(input,"c", 9)==0 ) ){
+if(strncmp(input,"dementball", 9)==0 || (strncmp(input,"najelena", 9)==0 ) || (strncmp(input,"chaos", 9)==0 ) ){
    nahled(input);
 	goto LOOP;
 }
@@ -222,7 +222,7 @@ ZOBRAZ: printf("________________________________________________________________
 		najelena=0; chaos =0;
 	}
 	if(nic == true){
-		dementball = 0; najelena = 0;
+		dementball = 0; najelena = 0;chaos=0;
 	}
 	if(noc == true){
 		dementball = 0; najelena=0; chaos =0;
@@ -267,31 +267,40 @@ char nahled(char boi[20]){
 	printf("|  _    ||   _   |   ___|   ||    ___||   |___ |    ___||  _    ||   _   |  NA ZA%c%cTEK SCH., DOPROST%CED SCH.\n", CZ, AA, RZ);
 	printf("| | |   ||  | |  |  |       ||   |___ |       ||   |___ | | |   ||  | |  |  BEZ SPEC. REKVIZIT\n");
 	printf("|_|  |__||__| |__|  |_______||_______||_______||_______||_|  |__||__| |__|  \n \n");
-	printf("REKVIZITY:%c%ctek na zav%cz%cn%c o%c%c, st%cl                                                   (             )  \n", sz, aa, aa, aa, ii, cz, ii, uk);
+	printf("REKVIZITY:%c%ctek na zav%cz%cn%c o%c%c, st%cl                                                     (             )  \n", sz, aa, aa, aa, ii, cz, ii, uk);
  	printf("PRAVIDLA:Jeden %clov%ck je myslivec, ostatn%c jsou jeleni. C%clem myslivce je dotykem chytit   `--(_   _)--'     \n", cz, ie, ii, ii);
 	printf("a vy%cadit jeleny a jeleni se sna%c%c se mu vyhnout a z%cstat posledn%c. Jeleni i myslivci se        Y-Y          \n", rz, zs, ii, uk, ii);
     printf("mohou pohybovat pouze v lese, co%c je st%cl, kter%cho se mus%c v%cichni st%cle dot%ckat. Stolu        /@@ \\         \n",zs, uk, ee, ii, sz, aa, yy); 
     printf("se lid%c mohou dot%ckat pouze zeshora.                                                          /     \\          \n", ee, yy);
-    printf("                                                                                              `--'.  \\             ,\n");
+    printf("ALTERNATIVN%C PRAVIDLA: zak%czat/povolit h%cb%cn%c stoly.                                                          `--'.  \\             ,\n", II, aa, yy, aa, ii);
     printf("                                                                                                   |   `.__________/)     \n");
 	}
 
-	else if(strcmp(boi,"#03")==0 || strcmp(boi,"c")==0){
+	else if(strcmp(boi,"#03")==0 || strcmp(boi,"chaos")==0){
 		printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
 		printf("          _             _       _    _                   _            _                       \n");
 		printf("        /\\ \\           / /\\    / /\\ / /\\                /\\ \\         / /\\               HRA   \n");
 		printf("       /  \\ \\         / / /   / / // /  \\   30 min     /  \\ \\       / /  \\                N%cSILN%c    \n", AA, AA);
 		printf("      / /\\ \\ \\       / /_/   / / // / /\\ \\            / /\\ \\ \\     / / /\\ \\__         DO M%cSTNOSTI\n ", II);
 		printf("    / / /\\ \\ \\     / /\\ \\__/ / // / /\\ \\ \\          / / /\\ \\ \\   / / /\\ \\___\\    DOPROST%CED SCH.\n ", RZ);
-		printf("   / / /  \\ \\_\\   / /\\ \\___\\/ // / /  \\ \\ \\        / / /  \\ \\_\\  \\ \\ \\ \\/___/  BEZ SPEC. REKVIZIT, BEZ NI%cEHO\n", cz);
+		printf("   / / /  \\ \\_\\   / /\\ \\___\\/ // / /  \\ \\ \\        / / /  \\ \\_\\  \\ \\ \\ \\/___/  BEZ SPEC. REKVIZIT\n", CZ);
 		printf("   / / /    \\/_/  / / /\\/___/ // / /___/ /\\ \\      / / /   / / /   \\ \\ \\                 \n");
-		printf("  / / /          / / /   / / // / /_____/ /\\ \\    / / /   / / /_    \\ \\ \\                  \n");
-		printf(" / / /________  / / /   / / // /_________/\\ \\ \\  / / /___/ / //_/\\__/ / /                   \n");
-		printf("/ / /_________\\/ / /   / / // / /_       __\\ \\_\\/ / /____\\/ / \\ \\/___/ /                 \n");   
-		printf("\\/____________/\\/_/    \\/_/ \\_\\___\\     /____/_/\\/_________/   \\_____\\/                \n");
-                                                                            
+		printf("  / / /          / / /   / / // / /_____/ /\\ \\    / / /   / / /_    \\ \\ \\   ROLE:          \n");
+		printf(" / / /________  / / /   / / // /_________/\\ \\ \\  / / /___/ / //_/\\__/ / /  -Julie: zp%cv%c dojemn%c pod oknem  \n",ii, aa, ie);
+		printf("/ / /_________\\/ / /   / / // / /_       __\\ \\_\\/ / /____\\/ / \\ \\/___/ / -Romeo: sna%c%c se dostat k Julii           \n", zs, ii);   
+		printf("\\/____________/\\/_/    \\/_/ \\_\\___\\     /____/_/\\/_________/   \\_____\\/  -Matka: br%cn%c Romeovi, aby se dostal k Julii\n ", aa, ii);
+		printf("                                                                        -Den: sna%c%c se, aby bylo rozsv%cceno\n", zs, ii,ii);
+        printf("PRAVIDLA:Ze za%c%ctku se v%cem rozdaj%c role, kter%c budou plnit.  .( * .   -Noc: sna%c%c se, aby bylo zhasnuto\n", cz, aa, sz, ii, ee, zs, ii);
+    	printf("Ujist%cte se, %ce v%cichni svoje role ch%cpou a potom    	   .*  .  ) .  -Antigrav. pras%ctko: sna%c%c se b%ct co nejv%c%ce\n", ie, zs, sz, aa, aa, zs, ii, yy, yy, sz);
+   		printf("m%c%cete hru odstartovat. C%clem ka%cd%cho je plnit sv%cj %ckol   . . POOF .* . -Permon%ck: stav%c barik%cdu skrz klubovnu\n", uk, zs, ii, zs, ee, uk, uu, ii, ii, aa);
+    	printf("do konce %casov%cho limitu. Na konci ka%cd%cho kola ud%clejte    '* . (  .) ' -Policista: udr%cuje po%c%cdek; nesnese barik%cdy \n", cz, ee, zs, ee, ie, zs, rz, aa, aa);
+     	printf("zhodnocen%c, kde ka%cd%c %cekne, kdo byl a jak mu to %clo. 	      ` ( . *   -Komik: n%ckoho si vybere a vypr%cv%c mu vtipy \n", ii, zs, yy, rz, sz, ie, aa, ii);                                                          
+     	printf("Jeden %clov%ck m%c%ce m%ct i v%cce rol%c. Role se nesm%c nikomu %c%ckat.          dokud se nezasm%cje  \n", cz, ie, uk, zs, ii, ii, ii, ii, rz, ii, ie);  
+		printf("POZN.: Lid%c se mohou p%c%cli%c v%c%ct do sv%c role. P%cipravte se proto       -D%ct%c: zlob%c a za ka%cdou cenu nesm%c dostat d%crek\n", ee, rz, ii, sz, zs, ii, ee, rz, ii, ie, ii, zs, ii, aa, ee, rz, ii, sz, zs, ii, ee);
+		printf("na p%c%cpadn%c pranice. Tak%c si nechte po h%ce %cas na %cklid.              -Santa: d%cv%c d%crky lidem a mus%c 1 d%ct i d%ct%cti\n", rz, ii, ee, ee, rz, cz, uu, aa, aa, aa, ii, aa, ii, ie );
+		printf("Role m%c%cete rozd%cvat n%chodn%c, ale p%c%cpadn%c v%cb%cr trochu ovlivn%cte.    -Kr%cl: rozkazuje lidem a oni ho mus%c poslechnout\n", uk, zs, aa, aa, ie, rz, ii, ie, yy, ie, ie);
+		printf("P%ci h%ce se m%c%ce zni%cit nap%c. n%cbytek, dejte si na toto pozor.       kdy%c neposlechnou, dohl%cdn%cte, aby ud%clali 10 klik%c\n", rz, rz, uk, zs, cz, rz, aa, zs, ee, ie, ie, uk);
 	}
-
 	else{
 	printf("Toto ID neexistuje \n");
 	}
