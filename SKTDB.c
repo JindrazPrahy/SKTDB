@@ -4,7 +4,7 @@
 
 /*       TODO: NOTED SYMBOL       */
 
-/* ƒçesk√© znaky */
+/* »eskÈ znaky */
 int aa=160;int cz=159;int ii=161;int uu=163;int ee=130;int ie=216;int rz=253;int uk=133;int oo=162;int sz=231;int tj=156;int zs=167 ;int yy= 236;
 int II = 214; int AA=181;int EE=144;int TJ=155;int ZS=166;int IE=183;int SZ=230;int RZ=252;int CZ=428;
 
@@ -13,7 +13,7 @@ char nahled(char boi[20]);
 
 
 int main() {
-/*Mo≈ænosti: */	 bool FAE= 1;
+/*Moûnosti: */	 bool FAE= 1;
 
 char input [20];
 
@@ -55,7 +55,7 @@ if(strncmp(input,"#", 1)==0){
    nahled(input);
 	goto LOOP;
 }
-if(strncmp(input,"dementball", 9)==0 || (strncmp(input,"najelena", 9)==0 )){
+if(strncmp(input,"dementball", 9)==0 || (strncmp(input,"najelena", 9)==0 ) || (strncmp(input,"c", 9)==0 ) ){
    nahled(input);
 	goto LOOP;
 }
@@ -70,7 +70,7 @@ printf("		   |_____________________________|\n \n");
 }
 
 
-else{  /* Kdy≈æ zadaj n√¨co n√°hodn√Ωho */
+else{  /* Kdyû zadaj nÏco n·hodn˝ho */
 	printf("Toto nen%c validn%c p%c%ckaz, zkuste to znovu\n", ii, ii , rz, ii);
 
 }
@@ -88,7 +88,7 @@ int filtr(int bypass){ /* funkce na vytvo√∏en√≠ filtrovan√©ho seznamu */
 	bool bez=0;bool srek=0;bool nic=0;
 	bool noc=0;
 
-	/* ptac√≠ se f√°ze*/
+	/* ptacÌ se f·ze*/
 	if(bypass == 0){
 FILTROVANI:printf("Zadejte va%ce po%cadovan%c vyhled%cvac%c krit%cria:\n", sz, zs, aa, aa, ii, ee);
 	scanf("%s", input);    int c; 			while ( (c = getchar()) != EOF && c != '\n') { }
@@ -112,7 +112,7 @@ FILTROVANI:printf("Zadejte va%ce po%cadovan%c vyhled%cvac%c krit%cria:\n", sz, z
 			}	goto FILTROVANI;
 		}
 
-	/*  Misc. p√∏√≠kazy  */
+	/*  Misc. p¯Ìkazy  */
 		if(strcmp(input, "konec", 1) == 0 || strcmp(input, "k", 1) == 0) {
 			printf("Mission aborted \n");
 			goto BACK;
@@ -136,12 +136,12 @@ FILTROVANI:printf("Zadejte va%ce po%cadovan%c vyhled%cvac%c krit%cria:\n", sz, z
 		}
 	}
 
-	if(bypass ==1){ /* Zobraz√≠ cel√Ω seznam  */
+	if(bypass ==1){ /* ZobrazÌ cel˝ seznam  */
 		bool h=1; bool z=1;bool vyzv=1;bool b=1;bool p=1;bool m=1;bool sp=1;bool ch=1;bool l=1;bool lk=1;bool kl=1;bool zsch=1;bool psch=1;bool ksch=1;bool vch=1;bool noc=1;
 		goto ZOBRAZ;
 	}
 
-	/* Procesovac√≠ f√°ze */
+	/* ProcesovacÌ f·ze */
 bool dementball =0;bool najelena=0;bool chaos=0;
 
 
@@ -231,7 +231,7 @@ ZOBRAZ: printf("________________________________________________________________
 
 
 
-		/* Zobrazovac√≠ f√°ze (2 taby a mezera)*/
+		/* ZobrazovacÌ f·ze (2 taby a mezera)*/
 		int counter = 1;
 	if(dementball == 1){ printf("%d...#01..........DEMENTBALL\n", counter); counter++;}
 	if(najelena == 1){ printf("%d...#02..........NA JELENA\n", counter); counter++;}
@@ -267,13 +267,29 @@ char nahled(char boi[20]){
 	printf("|  _    ||   _   |   ___|   ||    ___||   |___ |    ___||  _    ||   _   |  NA ZA%c%cTEK SCH., DOPROST%CED SCH.\n", CZ, AA, RZ);
 	printf("| | |   ||  | |  |  |       ||   |___ |       ||   |___ | | |   ||  | |  |  BEZ SPEC. REKVIZIT\n");
 	printf("|_|  |__||__| |__|  |_______||_______||_______||_______||_|  |__||__| |__|  \n \n");
-	printf("REKVIZITY:%c%ctek na zav%cz%cn%c o%c%c, st%cl                                                     (             )  \n", sz, aa, aa, aa, ii, cz, ii, uk);
+	printf("REKVIZITY:%c%ctek na zav%cz%cn%c o%c%c, st%cl                                                   (             )  \n", sz, aa, aa, aa, ii, cz, ii, uk);
  	printf("PRAVIDLA:Jeden %clov%ck je myslivec, ostatn%c jsou jeleni. C%clem myslivce je dotykem chytit   `--(_   _)--'     \n", cz, ie, ii, ii);
 	printf("a vy%cadit jeleny a jeleni se sna%c%c se mu vyhnout a z%cstat posledn%c. Jeleni i myslivci se        Y-Y          \n", rz, zs, ii, uk, ii);
     printf("mohou pohybovat pouze v lese, co%c je st%cl, kter%cho se mus%c v%cichni st%cle dot%ckat. Stolu        /@@ \\         \n",zs, uk, ee, ii, sz, aa, yy); 
     printf("se lid%c mohou dot%ckat pouze zeshora.                                                          /     \\          \n", ee, yy);
-    printf("ALTERNATIVN%c PRAVIDLA:Zak%czat/povolit h%cb%cn%c stoly.                                           `--'.  \\             ,\n", II, aa, yy, aa, ii	);
+    printf("                                                                                              `--'.  \\             ,\n");
     printf("                                                                                                   |   `.__________/)     \n");
+	}
+
+	else if(strcmp(boi,"#03")==0 || strcmp(boi,"c")==0){
+		printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+		printf("          _             _       _    _                   _            _                       \n");
+		printf("        /\\ \\           / /\\    / /\\ / /\\                /\\ \\         / /\\               HRA   \n");
+		printf("       /  \\ \\         / / /   / / // /  \\   30 min     /  \\ \\       / /  \\                N%cSILN%c    \n", AA, AA);
+		printf("      / /\\ \\ \\       / /_/   / / // / /\\ \\            / /\\ \\ \\     / / /\\ \\__         DO M%cSTNOSTI\n ", II);
+		printf("    / / /\\ \\ \\     / /\\ \\__/ / // / /\\ \\ \\          / / /\\ \\ \\   / / /\\ \\___\\    DOPROST%CED SCH.\n ", RZ);
+		printf("   / / /  \\ \\_\\   / /\\ \\___\\/ // / /  \\ \\ \\        / / /  \\ \\_\\  \\ \\ \\ \\/___/  BEZ SPEC. REKVIZIT, BEZ NI%cEHO\n", cz);
+		printf("   / / /    \\/_/  / / /\\/___/ // / /___/ /\\ \\      / / /   / / /   \\ \\ \\                 \n");
+		printf("  / / /          / / /   / / // / /_____/ /\\ \\    / / /   / / /_    \\ \\ \\                  \n");
+		printf(" / / /________  / / /   / / // /_________/\\ \\ \\  / / /___/ / //_/\\__/ / /                   \n");
+		printf("/ / /_________\\/ / /   / / // / /_       __\\ \\_\\/ / /____\\/ / \\ \\/___/ /                 \n");   
+		printf("\\/____________/\\/_/    \\/_/ \\_\\___\\     /____/_/\\/_________/   \\_____\\/                \n");
+                                                                            
 	}
 
 	else{
