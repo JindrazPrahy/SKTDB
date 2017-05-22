@@ -1,0 +1,362 @@
+/* -----------------------------------------------------------------------------
+   Basic page layout
+   ----------------------------------------------------------------------------- */
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden; 
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    height: 100%; 
+    max-height: 100%; 
+    font-family: Verdana, arial, helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#header, #footer {
+    position: absolute; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+    color: white;
+}
+
+#header {
+    background-color:#888888;
+    height:170px;
+    padding:10px;
+    margin:0px;
+    /*background: -webkit-gradient(radial, center center, 0, center center, 700.5, from(#cccccc), to(#223344));*/
+}
+
+#footer {
+    top: auto;
+    bottom: 0; 
+    height: 50px; /*Height of bottom frame div*/
+    overflow: hidden; /*Disable scrollbars. Set to "scroll" to enable*/
+    background-color: #000000;
+    color: white;
+}
+
+#maincontent{
+    position: fixed; 
+    top: 190px; /*Set top value to HeightOfTopFrameDiv*/
+    left: 0;
+    right: 0;
+    bottom: 50px; /*Set bottom value to HeightOfBottomFrameDiv*/
+    overflow: auto; 
+    background: #fff;
+    border: 3px #cccccc solid;
+}
+
+
+/* -----------------------------------------------------------------------------
+   Header layout
+   ----------------------------------------------------------------------------- */
+
+#layoutGrid {
+    margin:0 auto;
+}
+#layoutGrid, .layoutGridStyle {
+    padding:0px;
+    border-width:0px;
+    vertical-align:top;
+}
+
+.darkknightDiv {
+	background:#262b38;
+	height:144px;
+	width:205px;/* 188px */
+	padding: 8px;
+	margin: 0px;
+	
+	border-left:3px solid #567;
+	border-right:3px solid #000;
+	border-top:3px solid #567;
+	border-bottom:3px solid #000;
+}
+
+.darkknightTable {
+	background:#262b38;
+	padding: 0px;
+	margin: 0px;
+	
+	border-left:3px solid #567;
+	border-right:3px solid #000;
+	border-top:3px solid #567;
+	border-bottom:3px solid #000;
+}
+
+.darkknightTable tbody, .darkknightTable td, .darkknightTable tr {
+	padding: 0px;
+	margin: 0px;
+}
+
+.darkknight a {
+	text-decoration:underline;
+	font-weight:bold;
+	color:#abc;
+}
+.darkknight a:visited {
+	background:#262b38;
+	color:#abc;
+}
+.darkknight a:hover {
+	color:#cdf;
+	text-decoration:underline;
+	position:relative;
+}
+.darkknight caption {
+	border-top:3px solid #567;
+	border-bottom:1px solid #000;
+	font-size:20px;
+	font-weight:bold;
+}
+
+#mainControls, #mainControls td {
+	margin:0px;
+	padding:0px;
+}
+
+#mainControls .controlCells {
+	border-top:1px solid #567;
+	border-bottom:1px solid #000;
+	border-left:1px solid #567;
+	border-right:1px solid #000;
+	vertical-align:top;
+	text-align:center;
+	padding:5px;
+}
+
+.tableLineFitter {
+    height:124px;
+    border-collapse:collapse;
+}
+
+.tableLineFitter, .tableLineFitter tbody, .tableLineFitter tr, .tableLineFitter td {
+    padding:0;
+    margin:0;
+    border-width:0px;
+    vertical-align:middle;
+    border-collapse:collapse;
+}
+
+.settingsStyle {
+    margin:0px;
+    padding:0px;   
+}
+
+#inputText {
+    height:52px;
+}
+
+/* -----------------------------------------------------------------------------
+   Main Content
+   ----------------------------------------------------------------------------- */
+
+#outputFigDisplay {
+    padding-top:10px;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+#outputFigDisplay pre {
+    margin-top:15px;
+    margin-bottom:15px;
+}
+
+.aol {
+    font-size:10pt;
+    font-family:Arial;
+    white-space:pre;
+    display:block;
+}
+
+.fig {
+    font-size:10pt;
+    font-family:Monospace;/* */
+    white-space:pre;
+}
+
+.fig-ansi {
+    font-size:10pt;
+    font-family:"Courier New", Monospace;/* */
+    white-space:pre;
+}
+
+/* -----------------------------------------------------------------------------
+   Footer
+   ----------------------------------------------------------------------------- */
+
+#footer a {
+	text-decoration:underline;
+	font-weight:bold;
+	color:#abc;
+}
+#footer a:visited {
+	background:#262b38;
+	color:#abc;
+}
+#footer a:hover {
+	color:#cdf;
+	text-decoration:underline;
+	position:relative;
+}
+
+.footerDiv {
+    float:left;
+    margin-top:5px;
+    margin-left:10px;
+}
+.footerImg {
+    vertical-align:middle;
+    margin-right:5px;
+    border-width:0px; 
+}
+
+.footer-logo {
+    float:right;
+    margin-right:20px;
+    padding-top:5px;
+}
+
+/* -----------------------------------------------------------------------------
+   Share Box
+   ----------------------------------------------------------------------------- */
+
+.taag-sb-screenpad {
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+    display:none;
+    z-index:200000;
+}
+
+.taag-sb-screenpad {
+    background-color:#000000;
+    filter:alpha(opacity=40);
+    opacity: 0.4;
+    position:absolute;
+    top:0;
+    left:0;
+    padding:0;
+    margin:0;
+    display:block;
+    z-index:200010;
+}
+
+.taag-sb-dialog {
+    position:absolute;
+	background-color:#8798A9;
+    width:450px;
+    margin:0;
+    padding:0px;
+    border: 1px solid #333333;
+    overflow:hidden;
+    z-index:200020;
+}
+
+.taag-sb-titlebar {
+    color:white;    
+    padding:6px;
+}
+
+.taag-sb-dialog-form {
+    background-color:#f7f7f7;
+    padding:8px;
+    text-align:center;
+}
+
+.taag-sb-labels {
+    text-align:left;
+    display:inline-block;
+    width: 85px;   
+}
+
+.taag-sb-textbox {
+    width:340px;
+}
+
+.taag-sb-share {
+    margin-top:6px;
+}
+
+.taag-sb-share-table {
+    margin: 0 auto;
+}
+
+.taag-sb-btn-container {
+    margin-top:2px;   
+}
+
+/* -----------------------------------------------------------------------------
+   Responsive
+   ----------------------------------------------------------------------------- */
+
+@media (max-width: 800px) {
+  .extra-blocks {
+    display: none;
+  }
+}
+
+@media (max-width: 736px) {
+  .app-extra-inputs {
+    width: 150px;
+  }
+
+  .app-extra-inputs  select {
+    max-width: 100px;
+  }
+
+  .phone-hide {
+    display: none;
+  }
+
+    #header {
+        height:120px;
+        padding:0;
+    }
+
+    #maincontent{
+        top: 120px;
+        bottom: 25px;
+    }
+
+    #footer {
+        height: 25px; /*Height of bottom frame div*/
+    }
+
+    #inputText {
+        height:22px;
+    }
+
+    #outputFigDisplay {
+        padding:0;
+    }
+
+    #outputFigDisplay pre {
+        margin-top:0px;
+        margin-bottom:0px;
+    }
+
+    .footer-logo {
+        margin-right:5px;
+        padding-top:0px;
+    }
+
+  .tableLineFitter {
+    height:94px;
+   }
+
+
+}
+
