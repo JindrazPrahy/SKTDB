@@ -1,8 +1,8 @@
 /* THIS FILE WILL BE OVERWRITTEN BY DEV-C++ */
 /* DO NOT EDIT ! */
 
-#ifndef PROJECT1_PRIVATE_H
-#define PROJECT1_PRIVATE_H
+#ifndef PRO_PRIVATE_H
+#define PRO_PRIVATE_H
 
 /* VERSION DEFINITIONS */
 #define VER_STRING	"1.0.0.0"
@@ -20,4 +20,4 @@
 #define PRODUCT_NAME	""
 #define PRODUCT_VERSION	"1.0.0.0"
 
-#endif /*PROJECT1_PRIVATE_H*/
+#endif /*PRO_PRIVATE_H*/

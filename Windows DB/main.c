@@ -502,11 +502,11 @@ char nahled(char nahledinput[20]){
 
 	  else if( strcmp(nahledinput,"#19") == 0 || strcmp(nahledinput,"tramvaj") == 0 ){
 	     printf("\t \t \t ********************************** \n");
-	     printf("\t \t \t *   TRAMVAJ / HOrÍCÍ MRAKODRAP   * \n");
+	     printf("\t \t \t *   TRAMVAJ / HORÍCÍ MRAKODRAP   * \n");
 	     printf("\t \t \t ********************************** \n");
 	     printf("REKVIZITY: lano \n");
-	     printf("PRAVIDLA: Utvorte kruh z lana, do kterého si stoupnou vŠichni hráèi. Je to horící mrakodrap, ze kterého není úniku. NaŠtìstí prilétá vrtulník, ale v nìm je místo pouze na jednoho hráèe. Hráèi se tedy snaží vytlaèit ostatní z kruhu, aby vrtulník zachránil právì je.\n");
-	     printf("POZN.: Urèete jasnì hranici vypadnutí z mrakodrapu, aby nenastaly sporné situace. Napr. obì nohy ven z kruhu, polovina tìla... Mùžete také urèit soudce, který bude nad hrou dohlížet a sporné prípady rozhodovat.\n");
+	     printf("PRAVIDLA: Utvorte kruh z lana, do kterého si stoupnou všichni hráèi. Je to horící mrakodrap, ze kterého není úniku. Naštestí prilétá vrtulník, ale v nem je místo pouze na jednoho hráèe. Hráèi se tedy snaží vytlaèit ostatní z kruhu, aby vrtulník zachránil práve je.\n");
+	     printf("POZN.: Urèete jasne hranici vypadnutí z mrakodrapu, aby nenastaly sporné situace. Napr. obe nohy ven z kruhu, polovina tela... Mùžete také urèit soudce, který bude nad hrou dohlížet a sporné prípady rozhodovat.\n");
 	  }
 
 
@@ -515,7 +515,7 @@ char nahled(char nahledinput[20]){
 	     printf("\t \t \t *   AUSTRALSKÝ FOTBAL   * \n");
 	     printf("\t \t \t ************************* \n");
 	     printf("REKVIZITY: tenisák\n");
-	     printf("PRAVIDLA: Hráèi se postaví do kruhu (=na obvod pomyslné kružnice) èelem ven a tak, aby se dotýkali nohama. Potom se shýbnou, aby se koukali mezi rozkroèenýma nohama. Jejich rozkroèené nohy jsou branky. Dovnitr se hodí míè a hráèi se snaží prohodit míè brankami ostatních. Pokud hráèi nìkdo prohodí míè mezi nohama, nebo se hráè narovná, ztrácí jednu ruku, a když nemá ruku, tak vypadává. Hráèi nesmí strílet na lidi tìsnÄ› vedle sebe, takže vyhrávají poslední tri lidé.\n");
+	     printf("PRAVIDLA: Hráèi se postaví do kruhu (=na obvod pomyslné kružnice) èelem ven a tak, aby se dotýkali nohama. Potom se shýbnou, aby se koukali mezi rozkroèenýma nohama. Jejich rozkroèené nohy jsou branky. Dovnitr se hodí míè a hráèi se snaží prohodit míè brankami ostatních. Pokud hráèi nekdo prohodí míè mezi nohama, nebo se hráè narovná, ztrácí jednu ruku, a když nemá ruku, tak vypadává. Hráèi nesmí strílet na lidi tesne vedle sebe, takže vyhrávají poslední tri lidé.\n");
 
 	  }
   

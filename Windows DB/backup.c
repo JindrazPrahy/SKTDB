@@ -482,7 +482,7 @@ char nahled(char nahledinput[20]){
 	     printf("\t \t \t *    PAŠERÁK    * \n");
 	     printf("\t \t \t ***************** \n");
 	     printf("REKVIZITY: provaz, pøedmìty, které se lehce dají skrıt na èlovìku\n");
-	     printf("PRAVIDLA: Hráèi se rozdìlí na dva tımy - celníky a paŠeráky (celníkù je ménì ne paŠerákù, pomìr zhruba 3:2). Provazem se ohranièí kruh s polomìrem cca. 2 metry, kterı bude pøedstavovat zahranièí pro paŠeráky. Urèí se jeŠtì území kolem zahranièí, které pøedstavuje celnici, a která je velká a 50 metrù. Ãškolem paŠerákù je mimo celnici se tajnì smluvit, u nìjakého paŠeráka schovat paŠovanı pøedmìt a onen pøedmìt propaŠovat do zahranièí. Staèí tedy, aby se èlovìk i s pøedmìtem dostali do zahranièí a paŠeráci vyhrají. Celníci vyhrají, kdy chytí paŠeráka s pøedmìtem, nebo uplyne pøedem stanovenı limit. Pokud je paŠerák v celnici, mohou ho celníci chytit a proŠacovat (Šacovat mohou jak dlouho chtìjí, klidnì i nemusejí). Pokud se celník dotkne paŠeráka a nic nenajde, musí se paŠerák vrátit zpìt do mimo celnici a zahranièí. Pokud celníci chytí paŠeráka a najdou pøedmìt, paŠeráci prohráli.\n");
+	     printf("PRAVIDLA: Hráèi se rozdìlí na dva tımy - celníky a pašeráky (celníkù je ménì ne paŠerákù, pomìr zhruba 3:2). Provazem se ohranièí kruh s polomìrem cca. 2 metry, kterı bude pøedstavovat zahranièí pro paŠeráky. Urèí se jeŠtì území kolem zahranièí, které pøedstavuje celnici, a která je velká a 50 metrù. Ãškolem paŠerákù je mimo celnici se tajnì smluvit, u nìjakého paŠeráka schovat paŠovanı pøedmìt a onen pøedmìt propaŠovat do zahranièí. Staèí tedy, aby se èlovìk i s pøedmìtem dostali do zahranièí a paŠeráci vyhrají. Celníci vyhrají, kdy chytí paŠeráka s pøedmìtem, nebo uplyne pøedem stanovenı limit. Pokud je paŠerák v celnici, mohou ho celníci chytit a proŠacovat (Šacovat mohou jak dlouho chtìjí, klidnì i nemusejí). Pokud se celník dotkne paŠeráka a nic nenajde, musí se paŠerák vrátit zpìt do mimo celnici a zahranièí. Pokud celníci chytí paŠeráka a najdou pøedmìt, paŠeráci prohráli.\n");
 	}
 
 	 else if( strcmp(nahledinput,"#17") == 0 || strcmp(nahledinput,"evilmultitasking") == 0 ){
@@ -505,7 +505,7 @@ char nahled(char nahledinput[20]){
 	     printf("\t \t \t *   TRAMVAJ / HOØÍCÍ MRAKODRAP   * \n");
 	     printf("\t \t \t ********************************** \n");
 	     printf("REKVIZITY: lano \n");
-	     printf("PRAVIDLA: Utvoøte kruh z lana, do kterého si stoupnou vŠichni hráèi. Je to hoøící mrakodrap, ze kterého není úniku. NaŠtìstí pøilétá vrtulník, ale v nìm je místo pouze na jednoho hráèe. Hráèi se tedy snaí vytlaèit ostatní z kruhu, aby vrtulník zachránil právì je.\n");
+	     printf("PRAVIDLA: Utvoøte kruh z lana, do kterého si stoupnou všichni hráèi. Je to hoøící mrakodrap, ze kterého není úniku. Naštìstí pøilétá vrtulník, ale v nìm je místo pouze na jednoho hráèe. Hráèi se tedy snaí vytlaèit ostatní z kruhu, aby vrtulník zachránil právì je.\n");
 	     printf("POZN.: Urèete jasnì hranici vypadnutí z mrakodrapu, aby nenastaly sporné situace. Napø. obì nohy ven z kruhu, polovina tìla... Mùete také urèit soudce, kterı bude nad hrou dohlíet a sporné pøípady rozhodovat.\n");
 	  }
 
@@ -515,7 +515,7 @@ char nahled(char nahledinput[20]){
 	     printf("\t \t \t *   AUSTRALSKİ FOTBAL   * \n");
 	     printf("\t \t \t ************************* \n");
 	     printf("REKVIZITY: tenisák\n");
-	     printf("PRAVIDLA: Hráèi se postaví do kruhu (=na obvod pomyslné krunice) èelem ven a tak, aby se dotıkali nohama. Potom se shıbnou, aby se koukali mezi rozkroèenım nohama. Jejich rozkroèené nohy jsou branky. Dovnitø se hodí míè a hráèi se snaí prohodit míè brankami ostatních. Pokud hráèi nìkdo prohodí míè mezi nohama, nebo se hráè narovná, ztrácí jednu ruku, a kdy nemá ruku, tak vypadává. Hráèi nesmí støílet na lidi tìsnÄ› vedle sebe, take vyhrávají poslední tøi lidé.\n");
+	     printf("PRAVIDLA: Hráèi se postaví do kruhu (=na obvod pomyslné krunice) èelem ven a tak, aby se dotıkali nohama. Potom se shıbnou, aby se koukali mezi rozkroèenım nohama. Jejich rozkroèené nohy jsou branky. Dovnitø se hodí míè a hráèi se snaí prohodit míè brankami ostatních. Pokud hráèi nìkdo prohodí míè mezi nohama, nebo se hráè narovná, ztrácí jednu ruku, a kdy nemá ruku, tak vypadává. Hráèi nesmí støílet na lidi tìsne vedle sebe, take vyhrávají poslední tøi lidé.\n");
 
 	  }
   
