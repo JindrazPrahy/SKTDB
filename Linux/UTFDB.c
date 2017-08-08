@@ -292,7 +292,7 @@ if(kikikokokeke == 1 ){ printf("%d",counter);if(counter<=9){printf(".");}printf(
 if(maso == 1         ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#07-MASO\n" ); counter++;}
 if(talismanek == 1   ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#08-TALISMÁNEK\n" ); counter++;}
 if(kralnidoriamy == 1){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#09-KRÁL NIDORIAMY\n"); counter++;}
-if(aliby == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#9-ALIBY\n" ); counter++;} 
+if(aliby == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#10-ALIBY\n" ); counter++;} 
 if(impro == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#11-IMPROVIZACE\n" ); counter++;} 
 if(fotbika == 1      ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#12-FOTBIKA\n" ); counter++;} 
 if(komhops == 1  ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#13-KOMANDO HOPSANDO\n" ); counter++;} 
