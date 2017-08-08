@@ -1,17 +1,26 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
 
-/*       TODO: NOTED SYMBOL       */
+/*       TODO: - responsivní tagy u každé hry */
+		/* Symboly pro filtry  */
+	bool h=false; bool z=false; bool vyzv=false;
+	bool beh = false; bool b=false; bool p=false; bool m=false; bool sp=false;
+	bool ch=false; bool l=false;bool lk=false;bool kl=false; bool vlak =false;
+	bool zsch=false; bool psch=false; bool ksch=false; bool vsch=false;
+	bool bez=false; bool srek=false; bool nic=false;
+	bool noc=false;
+
 
 int filtr(int bypass); int c;
-char nahled(char boi[20]);
+char nahled(char nahledinput[20]);
 
+char input [20];
 
 int main() {
 /*Možnosti: */	 bool FAE= 1;
 
-unsigned int input [20];
 
 		/* Startup screen */
 printf("      __/ ___ _    ___ _         _    __            ___ __     _/    _      ___      _   /   __ ___        _  _  \n");
@@ -23,11 +32,11 @@ LOOP:scanf("%s", input);    int g;
 while ( (g = getchar()) != EOF && g != '\n') { }
 printf("Napsali jste: %s \n", input);
 
-if(strcmp(input, "help") == 0 || strcmp(input, "pomoc", 1) == 0){ 	/*nápověda*/
-	printf("Seznam příkazů:\n help  --> pomoc\n konec --> ukončit program\n hry   --> zobrazí seznam všech her\n filtr --> vyhledávání \n cisto --> vyčistí obrazovku\n"); goto LOOP;
-}
-if(strcmp(input, "konec") == 0|| strcmp(input, "k", 1) == 0){  /*ukončení­ programu*/
-	printf("		Nashledanou");
+if(strcmp(input, "help") == 0 || strcmp(input, "pomoc") == 0){ 	/*nápověda*/
+	printf("Seznam příkazů:\n help  --> pomoc\n konec --> ukončit program\n hry   --> zobrazí seznam všech her\n filtr --> vyhledávání \n cisto --> vyčistí obrazovku\n");   goto LOOP;
+} 
+if(strcmp(input, "konec") == 0 || strcmp(input, "k") == 0){  /*ukončení­ programu*/
+	printf("		Nashledanou \n");
 	goto END;
 }
 if(strcmp(input, "FML") == 0 || strcmp(input, "overwatch") == 0 ){ /*Lul dis */
@@ -35,7 +44,7 @@ if(strcmp(input, "FML") == 0 || strcmp(input, "overwatch") == 0 ){ /*Lul dis */
   	printf("-    -       -       -----------  \n");}
 
  if(strcmp(input, "clr")==0 || strcmp(input,"cisto") ==0){
-	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 	goto LOOP;
 	}
 
@@ -48,22 +57,23 @@ if(strcmp(input, "hry") == 0 || strcmp(input, "ls") == 0){  /*zobrazí­ seznam 
 	goto LOOP;
 }
 
-
-if(strncmp(input,"#", 1)==0){
+/* Zobrazování her podle ID */
+if(strncmp(input,"#",1)==0){
    nahled(input);
 	goto LOOP;
 }
-if(strncmp(input,"dementball", 9)==0 || (strncmp(input,"najelena", 9)==0 ) || (strncmp(input,"chaos", 9)==0 ) ){
+/* Zobrazování her podle názvu */
+if(strcmp(input,"dementball")== 0 || (strcmp(input,"najelena")== 0 ) || (strcmp(input,"chaos")== 0 ) || strcmp(input,"indiánskýfotbal") == 0 || (strcmp(input,"komár") == 0 ) || strcmp(input,"kikikokokeke") == 0  || strcmp(input,"maso") == 0 || strcmp(input,"talismánek") == 0 || strcmp(input,"králnidoriamy") ==0 || strcmp(input, "aliby") == 0 || strcmp(input,"improvizace") == 0 || strcmp(input,"fotbika") == 0 || strcmp(input,"komandohopsando") == 0 || strcmp(input,"elektrika") == 0 || strcmp(input,"cinkačka") == 0 || strcmp(input,"pašerák") == 0 || strcmp(input,"evilmultitasking") == 0 || strcmp(input,"plácačka") == 0 || strcmp(input,"tramvaj") == 0 || strcmp(input,"australskýfotbal") == 0 ) {
    nahled(input);
 	goto LOOP;
 }
 
-if(strcmp(input,"menu") == 0){    /*Menu, options  			18+10 */
+if(strcmp(input,"autor") == 0 || strcmp(input, "author") == 0 ){    /* o autorovi  			18+10 */
 printf("		    _____________________________ \n");
 printf("		   |                             |\n");
-printf("		   |    ASCII EFFECTS:");   if( FAE==1){ printf("ZAPNUTO    ");} else{printf("");} printf("|\n");
+printf("		   |    SKTDB 1.1    30.7.2017   | \n");
 printf("		   |                             |\n");
-printf("		   |                             |\n");
+printf("		   |       JINDŘICH DUŠEK        |\n");
 printf("		   |_____________________________|\n \n");
 }
 
@@ -76,15 +86,8 @@ else{  /* Když zadaj něco náhodnýho */
 	END : return 0;
 }
 
-int filtr(int bypass){ /* funkce na vytvoření filtrovaného seznamu */
-	char temp[BUFSIZ];int mint = -1; int maxt = 100; int t; char input[6];
-		/* Symboly pro filtry  */
-	bool h=0; bool z=0;bool vyzv=0;
-	bool b=0;bool p=0;bool m=0;bool sp=0;
-	bool ch=0;bool l=0;bool lk=0;bool kl=0;bool vlak =0;
-	bool zsch=0;bool psch=0;bool ksch=0;bool vsch=0;
-	bool bez=0;bool srek=0;bool nic=0;
-	bool noc=0;
+int filtr(int bypass){ /* funkce na vytvoření filtrovaného seznamu    ZNAK  */
+	char temp[BUFSIZ];int mint = -1; int maxt = 120; int t; char input[6];
 
 	/* ptací se fáze*/
 	if(bypass == 0){
@@ -92,14 +95,20 @@ FILTROVANI:printf("Zadejte vaše požadované vyhledávací kritéria (nebo help
 	scanf("%s", input);    int c; 			while ( (c = getchar()) != EOF && c != '\n') { }
 		/*  Zadávání­ kritérií­  */
 		/* normální­ kritéria */
-		if(strcmp(input, "h", 1) == 0){ h=1; goto FILTROVANI;}else if(strcmp(input, "z", 1) == 0){ z=1; goto FILTROVANI;}else if(strcmp(input, "vyzv", 1) == 0){ vyzv=1; goto FILTROVANI;}
-		else if(strcmp(input, "b") == 0){ b=1; goto FILTROVANI;}else if(strcmp(input, "p") == 0){ p=1; goto FILTROVANI;}else if(strcmp(input, "m") == 0){ m=1; goto FILTROVANI;}else if(strcmp(input, "sp") == 0){ sp=1; goto FILTROVANI;}
-		else if(strcmp(input, "ch") == 0){ ch=1; goto FILTROVANI;}else if(strcmp(input, "l") == 0){ l=1; goto FILTROVANI;}else if(strcmp(input, "lk") == 0){ lk=1; goto FILTROVANI;}else if(strcmp(input, "kl") == 0){ kl=1; goto FILTROVANI;}else if(strcmp(input, "vlak") == 0){ vlak=1; goto FILTROVANI;}
-		else if(strcmp(input, "zsch") == 0){ zsch=1; goto FILTROVANI;}else if(strcmp(input, "psch") == 0){ psch=1; goto FILTROVANI;}else if(strcmp(input, "ksch") == 0){ ksch=1; goto FILTROVANI;}else if(strcmp(input, "vsch") == 0){ vsch=1; goto FILTROVANI;}
-		else if(strcmp(input, "bez") == 0){ bez=1; goto FILTROVANI;}else if(strcmp(input, "srek") == 0){ srek=1; goto FILTROVANI;}else if(strcmp(input, "nic") == 0){ nic=1; goto FILTROVANI;}
-		else if(strcmp(input, "noc") == 0){ noc=1; goto FILTROVANI;}
+		if(strcmp(input, "h") == false){ h=1; goto FILTROVANI;}else if(strcmp(input, "z") == false){ z=1; goto FILTROVANI;}else if(strcmp(input, "vyzv") == false){ vyzv=1; goto FILTROVANI;}
+		else if(strcmp(input, "b") == false){ b=1; goto FILTROVANI;}else if(strcmp(input, "p") == false){ p=1; goto FILTROVANI;}else if(strcmp(input, "m") == false){ m=1; goto FILTROVANI;}else if(strcmp(input, "sp") == false){ sp=1; goto FILTROVANI;}
+		else if(strcmp(input, "ch") == false){ ch=1; goto FILTROVANI;}else if(strcmp(input, "l") == false){ l=1; goto FILTROVANI;}else if(strcmp(input, "lk") == false){ lk=1; goto FILTROVANI;}else if(strcmp(input, "kl") == false){ kl=1; goto FILTROVANI;}else if(strcmp(input, "vlak") == false){ vlak=1; goto FILTROVANI;}
+		else if(strcmp(input, "zsch") == false){ zsch=1; goto FILTROVANI;}else if(strcmp(input, "psch") == false){ psch=1; goto FILTROVANI;}else if(strcmp(input, "ksch") == false){ ksch=1; goto FILTROVANI;}else if(strcmp(input, "vsch") == false){ vsch=1; goto FILTROVANI;}
+		else if(strcmp(input, "bez") == false){ bez=1; goto FILTROVANI;}else if(strcmp(input, "srek") == false){ srek=1; goto FILTROVANI;}else if(strcmp(input, "nic") == false){ nic=1; goto FILTROVANI;}
+		else if(strcmp(input, "noc") == false){ noc=1; goto FILTROVANI;}
+
+		/* ukončení */
+		else if(strcmp(input, "konec") == 0 || strcmp(input, "k") == 0) {
+			printf("Zpět do hlavní nabídky \n");
+			goto BACK;
+		}
 		/*  čas */
-		else if(strcmp(input, "cas", 1) == 0){
+		else if(strcmp(input, "cas") == 0 || strcmp(input, "čas") == 0){
 			printf("Zadejte minimální čas v minutách:");
 			if (fgets(temp, sizeof(temp), stdin) != NULL){
 				mint = atoi(temp);
@@ -109,23 +118,33 @@ FILTROVANI:printf("Zadejte vaše požadované vyhledávací kritéria (nebo help
 				maxt = atoi(temp);
 			}	goto FILTROVANI;
 		}
+		/* přibližný čas */
+		else if(strcmp(input, "pčas") == 0 || strcmp(input,"pcas") == 0 ){
+			printf("Zadejte přibližný čas hry v minutách:");
+			if (fgets(temp, sizeof(temp), stdin) != NULL){
+			         mint = atoi(temp) - 5;
+				 maxt = atoi(temp) + 5;
+				 goto FILTROVANI;
+			}  
+		}
 
-	/*  Misc. příkazy  */
-		if(strcmp(input, "konec", 1) == 0 || strcmp(input, "k", 1) == 0) {
-			printf("Mission aborted \n");
+	/*  Ostatní příkazy  */
+		if(strcmp(input, "konec") == 0 || strcmp(input, "k") == 0) {
+			printf("Zpět do hlavní nabídky \n");
 			goto BACK;
 		}
-		else if(strcmp(input, "help", 1) == 0 || (strcmp(input, "ls", 1) == 0)){
+		else if(strcmp(input, "help") == 0 || (strcmp(input, "ls") == 0)){
 			printf("Toto jsou dostupná kritéria: \n");
 			printf("hry (h), závody (z), výzvy (vyzv)\n");
-			printf("brutální a náročné (b), přemýšlecí (m), pohodové (p), speciální (sp) \n");
+			printf("vyčerpávající - běhačky (beh), brutální a náročné (b), přemýšlecí (m), pohodové (p), speciální (sp) \n");
 			printf("za pochodu (ch), do lesa (l), na louku nebo plácek (lk), do místnosti (kl), do vlaku (vlak)\n");
 			printf("na začátek schůzky (zsch), doprostřed schůzky (psch), na konec schůzky (ksch), na ven na schůzce (vsch) \n");
 			printf("bez speciálních rekvizit (bez), s rekvizitami (srek), bez čehokoliv (nic) \n");
 			printf("noční hry (noc) \n");
+			printf("PRO HLEDÁNÍ NAPIŠTE: hledat \n");
 			goto FILTROVANI;
 		}
-		else if(strcmp(input, "hledat", 1) == 0 || strcmp(input, "hl", 1) == 0) {
+		else if(strcmp(input, "hledat") == 0 || strcmp(input, "hl") == 0) {
 			goto ZOBRAZ;
 		}
 		else{
@@ -135,95 +154,128 @@ FILTROVANI:printf("Zadejte vaše požadované vyhledávací kritéria (nebo help
 	}
 
 	if(bypass ==1){ /* Zobrazí celý seznam  */
-		bool h=1; bool z=1;bool vyzv=1;bool b=1;bool p=1;bool m=1;bool sp=1;bool ch=1;bool l=1;bool lk=1;bool kl=1;bool zsch=1;bool psch=1;bool ksch=1;bool vch=1;bool noc=1;
+		bool h=1; bool z=1;bool vyzv=1; bool beh = 1; bool b=1;bool p=1;bool m=1;bool sp=1;bool ch=1;bool l=1;bool lk=1;bool kl=1;bool zsch=1;bool psch=1;bool ksch=1;bool vsch=1;bool vlak=1;bool bez=1; bool srek=1; bool nic=1;bool noc=1;
+
 		goto ZOBRAZ;
 	}
+//	printf("PARAMETRY:");if(h==1){printf("hra, ");}if(z==1){printf("závod, ");}if(vyzv==1){printf("výzva, ");}if(beh==1){printf("běhačka, ");}if(b==1){printf("brutální, ");}if(p==1){printf("pohodová, ");}if(m==1){printf("přemýšlecí, ");}if(sp==1){printf("speciální, ");}if(ch==1){printf("za pochodu, ");}if(vlak==1){printf("do vlaku, ");}if(l==1){printf("do lesa, ");}if(lk==1){printf("na louku, ");}if(kl==1){printf("do klubovny, ");}if(zsch==1){printf("na začátek schůzky, ");}if(psch==1){printf("doprostřed schůzky, ");}if(ksch==1){printf("na konec schůzky, ");}if(vsch==1){printf("na ven na schůzku, ");}if(bez==1){printf("bez speciálních rekvizit, ");}if(srek==1){printf("s rekvizitami, ");}if(nic==1){printf("bez ničeho, ");}if(noc==1){printf("noční, ");}printf("\n");
+
+
+
+
+
+
+
+
+
 
 	/* Procesovací fáze */
-bool dementball =0;bool najelena=0;bool chaos=0;
+	// deklarace proměnných všech her
+bool dementball = false;      bool najelena = false;
+bool chaos = false;           bool indball = false; 
+bool komar = false;           bool kikikokokeke = false;
+bool maso = false;            bool talismanek = false;
+bool kralnidoriamy = false;   bool aliby = false;
+bool impro = false;           bool fotbika = false;
+bool komhops = false;         bool elektrika = false;
+bool cink = false;            bool paserak = false;
+bool evmul  = false;          bool placacka = false;
+bool tramvaj = false;         bool ausfot = false;
 
 
 ZOBRAZ: printf("________________________________________________________________________________________________________________ \n");
 	printf("		>>> SEZNAM ");
 		if(b == true){printf("BRUTÁLNÍCH ");} if(m == true){printf("PŘEMÝŠLECÍCH ");} if(p == true){printf("POHODOVÝCH ");} if(sp == true){printf("SPECIÁLNÍCH ");}
-		if(noc == true){printf("NOČNÍCH ");} printf("HER ");
+		if(noc == true){printf("NOČNÍCH ");} printf("HER "); if(beh == true){printf(" \' BĚHAČEK \'");}
 		if(ch == true){printf("ZA POCHODU ");} if(l == true){printf("DO LESA ");} if(lk == true){printf("NA LOUKU ");} if(kl == true){printf("DO MÍSTNOSTI ");} if(vlak == true){printf("DO VLAKU ");}
 		if(zsch == true){printf("NA ZAČÁTEK SCH. ");} if(psch == true){printf("DOPROSTŘED SCH. ");} if(ksch == true){printf("NA KONEC SCH. ");} if(vsch == true){printf("NA VEN NA SCH. ");}
 		if(mint != -1){ printf("TRVAJÍCÍCH OD %dmin DO %dmin", mint, maxt);} printf("<<< \n");
 		if(bez == true){printf("BEZ SP. REKVIZIT ");} if(srek == true){printf("S REKVIZITAMI ");} if(nic == true){printf("NA KTERÉ NIC NEPOTŘEBUJETE ");}
 
-	/* časový filtr, který nejdřív hodí­všechny hry true */
+	/* časový filtr, který nejdřív hodí­všechny hry s ok časem true */
 	for (t = mint; t <= maxt; t++) {
-	if (t == 10 ){
-		dementball = true;
+	if ( (16 >= t) && (t >= 9 ) ){
+		komar = true; najelena = true; kikikokokeke = true; dementball = true; maso = true; kralnidoriamy = true; fotbika = true; komhops = true; elektrika = true; cink = true; evmul = true; placacka = true; tramvaj = true; ausfot = true;
 	}
-	if (t == 10){
-		najelena = true;
+	if ( (31 >= t) && (t >= 9) ){
+		 talismanek = true; indball = true; aliby = true; impro = true;
 	}
-	if ( t == 30){
-		chaos = true;
+	if (( 41 >= t) && (t >= 19 ) ){
+		chaos = true; paserak = true;
 	}
 }
-		/* Co nezobrazovat */
-	if(h == true){
-		;
+		/* V této fázi se vyhodí z filtru všechny hry, které nesplňují požadavky. */
+	if(h == true){ /* hra */
+           	  ;
 		}
-	if(z == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(z == true){ /* závod */
+		dementball = false; najelena=false; chaos =false;indball = false; kikikokokeke = false; aliby = false; kralnidoriamy = false;
 	}
-	if(vyzv == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(beh == true){ /* běhačka */
+	dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; aliby = false; impro = false; komhops = false; elektrika = false; cink = false; evmul = false; ausfot = false;
 	}
-	if(b == true){
-		dementball = 0; najelena=0;
+	if(vyzv == true){ /* výzva */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
 	}
-	if(p == true){
-		chaos =0;
+	if(b == true){/* brutální */
+		dementball = false; najelena=false;indball = false;indball = false;komar = false; kikikokokeke = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; ausfot = false;
+
 	}
-	if(m == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(p == true){/* pohodový */
+		chaos =false;indball = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; fotbika = false; elektrika = false; cink = false; paserak = false; evmul = false; tramvaj = false; ausfot = false;
 	}
-	if(sp == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(m == true){ /* přemýšlecí */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; fotbika = false; elektrika = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
 	}
-	if(ch == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(sp == true){ /* speciální  */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
 	}
-	if(l == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(ch == true){ /* za pochodu */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+
 	}
-	if(lk == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(l == true){ /* do lesa */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+  
 	}
-	if(kl == true){
-		;
+	if(lk == true){ /* na louku */
+		dementball = false; najelena=false; chaos =false;komar = false; talismanek = false; aliby = false; fotbika = false; komhops = false; elektrika = false; cink = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+
 	}
-	if(vlak == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(kl == true){ /* do místnosti */
+		indball = false; kikikokokeke = false; talismanek = false; kralnidoriamy = false; paserak = false; evmul = false; placacka = false; tramvaj = false;
 	}
-	if(zsch == true){
-		chaos =0;
+	if(vlak == true){ /* ve vlaku */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+
+	} 
+	if(zsch == true){ /* začátek schůzky */
+		chaos =false;indball = false; kikikokokeke = false; aliby = false; kralnidoriamy = false; paserak = false; evmul = false; placacka = false; tramvaj = false;
+
 	}
-	if(psch == true){
-		;
+	if(psch == true){ /* doprostřed schůzky */
+		 ;
+
 	}
-	if(ksch == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(ksch == true){ /* konec schůzky */
+		dementball = false; najelena=false; chaos =false;indball = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
 	}
-	if(vsch == true){
-		dementball = 0; chaos =0;
+	if(vsch == true){ /* na ven na schůzku */
+		dementball = false; chaos =false;komar = false; maso = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; ausfot = false;
 	}
-	if(bez == true){
-		dementball = 0;
+	if(bez == true){ /* bez speciálních rekvizit */
+		dementball = false;indball = false;komar = false; maso = false; talismanek = false;
 	}
-	if(srek == true){
-		najelena=0; chaos =0;
+	if(srek == true){ /* s rekvizitami */
+		najelena=false; chaos =false;komar = false; kikikokokeke = false; aliby = false; kralnidoriamy = false; impro = false; komhops = false; placacka = false;
 	}
-	if(nic == true){
-		dementball = 0; najelena = 0;chaos=0;
+	if(nic == true){ /* bez ničeho */
+		dementball = false; najelena = false;chaos=false;indball = false; maso = false; talismanek = false; fotbika = false; elektrika = false; cink = false; paserak = false; evmul = false; tramvaj = false; ausfot = false;
+
 	}
-	if(noc == true){
-		dementball = 0; najelena=0; chaos =0;
+	if(noc == true){ /*noční hry */
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+
 	}
 
 
@@ -231,24 +283,41 @@ ZOBRAZ: printf("________________________________________________________________
 
 		/* Zobrazovací fáze (2 taby a mezera)*/
 		int counter = 1;
-	if(dementball == 1){ printf("%d...#01..........DEMENTBALL\n", counter); counter++;}
-	if(najelena == 1){ printf("%d...#02..........NA JELENA\n", counter); counter++;}
-	if(chaos == 1){ printf("%d...#03..........CHAOS\n", counter); counter++;}
-
-	BACK:return 0;
+if(dementball == 1   ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#01-DEMENTBALL\n"); counter++;}
+if(najelena == 1     ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#02-NA JELENA\n" ); counter++;}
+if(chaos == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#03-CHAOS\n" ); counter++;}
+if(indball == 1      ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#04-INDBALL\n" ); counter++;}
+if(komar == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#05-KOMÁR\n" ); counter++;} 
+if(kikikokokeke == 1 ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#06-KIKIKOKOKEKE\n" ); counter++;} 
+if(maso == 1         ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#07-MASO\n" ); counter++;}
+if(talismanek == 1   ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#08-TALISMÁNEK\n" ); counter++;}
+if(kralnidoriamy == 1){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#09-KRÁL NIDORIAMY\n"); counter++;}
+if(aliby == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#9-ALIBY\n" ); counter++;} 
+if(impro == 1        ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#11-IMPROVIZACE\n" ); counter++;} 
+if(fotbika == 1      ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#12-FOTBIKA\n" ); counter++;} 
+if(komhops == 1  ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#13-KOMANDO HOPSANDO\n" ); counter++;} 
+if(elektrika == 1    ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#14-ELEKTRIKA\n" ); counter++;} 
+if(cink == 1         ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#15-CINKAČKA\n" ); counter++;} 
+if(paserak == 1      ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#16-PAŠERÁK\n" ); counter++;} 
+if(evmul == 1    ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#17-EVIL MULTITASKING\n"); counter++;} 
+if(placacka == 1     ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#18-PLÁCAČKA\n" ); counter++;} 
+if(tramvaj == 1      ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#19-TRAMVAJ\n" ); counter++;} 
+if(ausfot == 1       ){ printf("%d",counter);if(counter<=9){printf(".");}printf("............#20-AUSTRALSKÝ FOTBAL\n" ); counter++;} 
+		      BACK:return 0;
 }
+/* Zde jsou pouze zápisy her */
 
-
-char nahled(char boi[20]){
-	if(strcmp(boi,"#01")==0 || strncmp(boi,"dementbal", 9)==0){ /* dementball */
+char nahled(char nahledinput[20]){
+	if(strcmp(nahledinput,"#01")==0 || strncmp(nahledinput,"dementbal", 9)==0){ /* dementball */
 		printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
-		printf("   _____                                        _   __               __   __ 	 	 \n ");
-		printf(" |_   _`.         10 minut                    / |_[  |             [  | [  | 		 HRA\n ");
-  		printf("   | | `.\\  .---.  _ .--..--.  .---.  _ .--. `| |-'| |.--.   ,--.   | |  | | 		 POHODOVÁ\n ");
-  		printf("   | |  | |/ /__\\ [ `.-. .-. |/ /__\\\\[ `.-. | | |  | '/'`\\\\  '_\\ :  | |  | |		 DO MÍSTNOSTI\n ");
- 		printf("  _| |_.' /| \\__., | | | | | || \\__., | | | | | |, |  \\__/ |// | |, | |  | |  	NA ZAČÁTEK SCH., DOPROSTŘED SCH.\n ");
+		printf("   _____                                        _   __               __   __ 	 	 \n");
+		printf(" |_   _`.         10 minut                    / |_[  |             [  | [  | 		 HRA\n");
+  		printf("   | | `.\\  .---.  _ .--..--.  .---.  _ .--. `| |-'| |.--.   ,--.   | |  | | 		 POHODOVÁ\n");
+  		printf("   | |  | |/ /__\\ [ `.-. .-. |/ /__\\\\[ `.-. | | |  | '/'`\\\\  '_\\ :  | |  | |		 DO MÍSTNOSTI\n");
+ 		printf("  _| |_.' /| \\__., | | | | | || \\__., | | | | | |, |  \\__/ |// | |, | |  | |  	NA ZAČÁTEK SCH., DOPROSTŘED SCH.\n");
 		printf(" |______.'  '.__.'[___||__||__]'.__.'[___||__]\\__/[__;.__.' \\'-;__/[___][___] 	   	 S REKVIZITAMI\n \n");
 		printf("REKVIZITY: Tenisák, klubko vlny, nebo jiný malý míček                ,-'''-,   "); printf("OMEZENÍ: -míče se lze dotýkat  \n");
+		if(h==1){printf("test\n \n");}
         printf("PRAVIDLA: Základ je podobný jako vybíjené - cílem je trefit         /\\     /\\  "); printf("jen jednou rukou najednou\n");
         printf("ostatní míčem a nebýt sám trefen (kdo je trefen vypadl).            | |   | |  "); printf("-míč se odpaluje JEN nadhozením \n");
         printf("Ježto se však hra jmenuje Dementball, mají hráči určité omezení.    \\/     \\/  "); printf("jednou rukou a úderem druhou \n");
@@ -256,7 +325,7 @@ char nahled(char boi[20]){
 		printf("ALTERNATIVNÍ PRAVIDLA: Můžete podle potřeby zmínit omezení. Např. ještě horší omezení pohybu a odpalování míče \npouze hlavou. \n");
 		printf("POZN.: U nás celkem populární hra. Je třeba hru urychlit, aby posledních pár hráčů nebojovalo zbytečně dlouho a lidi \nse nenudili. Komentář z role sportovního komentátora může být vtipný. \n");
 	}
-	else if(strcmp(boi,"#02")==0 || strcmp(boi,"najelena")==0){
+	else if(strcmp(nahledinput,"#02")==0 || strcmp(nahledinput,"najelena")==0){
 	printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
 	printf(" __    _  _______        ___  _______  ___      _______  __    _  _______  \n");
 	printf("|  |  | ||   _   |      |   ||       ||   |    |       ||  |  | ||   _   |  HRA        \n");
@@ -274,7 +343,7 @@ char nahled(char boi[20]){
     printf("                                                                                                   |   `.__________/)     \n");
 	}
 
-	else if(strcmp(boi,"#03")==0 || strcmp(boi,"chaos")==0){
+	else if(strcmp(nahledinput,"#03")==0 || strcmp(nahledinput,"chaos")==0){
 		printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
 		printf("          _             _       _    _                   _            _                       \n");
 		printf("        /\\ \\           / /\\    / /\\ / /\\                /\\ \\         / /\\               HRA   \n");
@@ -286,8 +355,9 @@ char nahled(char boi[20]){
 		printf("  / / /          / / /   / / // / /_____/ /\\ \\    / / /   / / /_    \\ \\ \\   ROLE:          \n");
 		printf(" / / /________  / / /   / / // /_________/\\ \\ \\  / / /___/ / //_/\\__/ / /  -Julie: zpívá dojemně pod oknem  \n");
 		printf("/ / /_________\\/ / /   / / // / /_       __\\ \\_\\/ / /____\\/ / \\ \\/___/ / -Romeo: snaží se dostat k Julii           \n");   
-		printf("\\/____________/\\/_/    \\/_/ \\_\\___\\     /____/_/\\/_________/   \\_____\\/  -Matka: brání Romeovi, aby se dostal k Julii\n ");
+		printf("\\/____________/\\/_/    \\/_/ \\_\\___\\     /____/_/\\/_________/   \\_____\\/  -Matka: brání Romeovi, aby se dostal k Julii\n");
 		printf("                                                                        -Den: snaží se, aby bylo rozsvíceno\n");
+	printf("REKVIZITY:papírky s názvy rolí a něco, z čeho mohou hráči losovat (klobouk atd.) \n");
         printf("PRAVIDLA:Ze začátku se všem rozdají role, které budou plnit.  .( * .   -Noc: snaží se, aby bylo zhasnuto\n");
     	printf("Ujistěte se, že všichni svoje role chápou a potom    	   .*  .  ) .  -Antigrav. prasátko: snaží se být co nejvýš\n");
    		printf("můžete hru odstartovat. Cílem každého je plnit svůj úkol   . . POOF .* . -Permoník: staví barikádu skrz klubovnu\n");
@@ -299,14 +369,161 @@ char nahled(char boi[20]){
 		printf("Role můžete rozdávat náhodně, ale případně výběr trochu ovlivněte.    -Král: rozkazuje lidem a oni ho musí poslechnout\n");
 		printf("Při hře se může zničit např. nábytek, dejte si na toto pozor.       když neposlechnou, dohlédněte, aby udělali 10 kliků\n");
 	}
-	else{
-	printf("Toto ID neexistuje \n");
+	else if(strcmp(nahledinput,"#04")==0 || strcmp(nahledinput,"indiánskýfotbal")==0){
+	  		printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	  printf("\t \t \t ****************** \n");
+	  printf("\t \t \t *INDIÁNSKÝ FOTBAL* \n");
+	  printf("\t \t \t ****************** \n \n");
+	  printf("REKVIZITY: Provaz, dva lehce uchopitelné předměty (petangové koule, flašky s vodou atp.)\n");
+	  printf("PRAVIDLA: Hráči se rozdělí do dvou stejně početných týmů. Připravte hrací pole, které je vytvořeno ze dvou polí oddělených lanem. Do každého s polí položte na zem ve vzdálenosti cca. 20 kroků lehce uchopitelný předmět (tj. lahev s vodou,  klacek v zemi, petangová koule...). Cílem každého z týmů je uchopit předmět prothráčského týmu. Pokud se toto některému z týmů povede, ukončí se kolo, tým dostane bod a vše se vrátí zpět do původního stavu. Háček spočívá v tom, že pokud se některý z hráčů nachází na poli cizího týmu, může ho druhý tým zmrazit dotykem. Zmražený člověk se nesmí hýbat a je rozmražen dotykem hráče ze svého týmu. \n ");
+	  printf("DODATEČNÁ PRAVIDLA: Pokud se dva nebo více lidí dotýkají, zmraženi jsou všichni, pokud se nepřítel dotkne byť jen jednoho z nich. \n Pokud se dva lidi dotknou a jsou oba na své polovině, vymění si místa a jsou oba zmraženi (toto pravidlo nemusíte využít).\n");
+	  printf("ALTERNATIVNÍ PRAVIDLA: Odmrazuje se podlezením nohou (jako v mrazíkovi) a ne dotykem.\n");
 	}
+	else if(strcmp(nahledinput,"#05")==0 || strcmp(nahledinput,"komar")==0 || strcmp(nahledinput,"komár")==0){
+	  printf("\t \t \t ************* \n");
+	  printf("\t \t \t *   KOMÁR   * \n");
+	  printf("\t \t \t ************* \n \n");
+	  printf("REKVIZITY: Stolička, šátek na zavázání očí, mikina na vytvoření palcátu\n");
+	  printf("PRAVIDLA: Určí se jeden hráč, jehož úkol se stane reprezentovat člověka. Ostatní lidé reprezentují komáry. Člověk si sedne na stoličku doprostřed místnosti, do ruky dostane zavázanou mikinu, či šátek, kterým lze bezbolestně mlátit (tzn.  noviny) a zaváže si oči. Úkolem komárů se stane vysávat krev člověku. To provedou tak, že se ho dotknou a poté se dotknou stěny (tím získají bod). Člověk se však ohání novinami a pokud nějakého komára zasáhne, je do konce kola vyřazen. Cílem komárů je dostat co nejvíce bodů a cílem člověka je sejmout všechny komáry.\n");
+	  printf("DODATEČNÁ PRAVIDLA: Komáři nemohou umřít, pokud nemají žádné body.\n");
+	}
+	
+	else if( strcmp(nahledinput,"#06") == 0 || strcmp(nahledinput,"kikikokokeke")==0  ){ /* KIKIKOKOKEKE */	
+	  printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ****************\n");
+	    printf("\t \t \t * KIKIKOKOKEKE *\n");
+	    printf("\t \t \t ****************\n \n");
+	    printf("REKVIZITY: -\n");
+	    printf("PRAVIDLA: Hráči se rozdělí na tři týmy: KI, KO a KE. Každý z týmů musí po celou dobu říkat jméno týmu, ve kterém právě je. Následně se hráči snaží chytit hráče jiných týmů, proti kterým jsou silní, a tím je konvertovat do svého týmu. Platí, že KI jsou silní proti KO, KO proti KE a KE proti KI. Vyhrajou ti, kteří skončí a jsou co nejméněkrát konvertováni.\n");	
+	}
+        else if( strcmp(nahledinput,"#07") == 0 || strcmp(nahledinput,"maso")==0  ){ 
+	  printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ***************\n");
+	    printf("\t \t \t *     MASO    *\n");
+	    printf("\t \t \t ***************\n \n");
+	    printf("REKVIZITY: tenisák\n");
+	    printf("PRAVIDLA: Zdůrazněte, že v této hře hraje každý sám za sebe. Určete jeden předmět, např. tenisák, který se stane ústředním předmětem hry. Hráči se po zahájení hry - vhození tenisáku do davu - snaží převzít kontrolu nad tenisákem a dotknout se jím dveří (nebo jiného určeného objektu). Háček je v tom, že každý se o to pokouší sám za sebe, a tak nastane pěkná mela.\n");
+	}
+        else if( strcmp(nahledinput,"#08") == 0 || strcmp(nahledinput,"talismánek")==0  ){ 
+	  printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ****************\n");
+	    printf("\t \t \t *  TALISMÁNEK  *\n");
+	    printf("\t \t \t ****************\n \n");
+	    printf("REKVIZITY: těžký velký předmět (ideálně s oblými stranami, aby se člověk nezranil)\n");
+	    printf("PRAVIDLA: Rozdělte hráče do minimálně tří stejně početných týmů. Doprostřed herního pole položte \' talismánek\' v podobě velké klády, či jiného těžkého předmětu. Následně rozdělte každému týmu stanoviště stejně daleko od talismánku. Cílem každého týmu je dostat talismánek do svého stanoviště.\n Na hře lze skvěle demonstrovat princip superpozice.\n");
+	}
+	else if( strcmp(nahledinput,"#09") == 0 || strcmp(nahledinput,"králnidoriamy") == 0 ){
+	     printf("\t \t \t ********************* \n");
+	     printf("\t \t \t *   KRÁL NIDORIAMY  * \n");
+	     printf("\t \t \t ********************* \n");
+	     printf("REKVIZITY: -\n");
+	     printf("PRAVIDLA: Určete nějaké hrací pole, jako např. louka. Poté rozdělte hráče do několika týmů. Hra probíhá tak, že hráči různě chodí po louce a snaží se navzájem zalehávat. Vítězí poté tým, který má na konci nejvíce lidí na vršku hromad. Za každou hromadu zalehlých lidí tedy dostane bod pouze ten tým, který má někoho na vrchu a vítězí tým s nejvíce body.\n");
+	}
+      	else if( strcmp(nahledinput,"#10") == 0 || strcmp(nahledinput,"aliby") == 0 ){
+	     printf("\t \t \t ************ \n");
+	     printf("\t \t \t *   ALIBY  * \n");
+	     printf("\t \t \t ************ \n");
+	     printf("REKVIZITY: židle na usazení vyslýchaných\n");
+	     printf("PRAVIDLA: Vyberte dva hráče, kteří se odeberou z doslechu ostatních (třeba za dveře). Jejich úkolem je domluvit si společné aliby. Poté zbytek hráčů po jednom oba vybrané předvolá a nařkne je z nějakého trestného činu (např. vražda rychlovarnou konvicí). Vybraným se pak kladou otázky a sleduje se, jak odpovídají. Cílem dvou dobrovolníků je, aby jejich výpovědi byly co nejvíce identické a svědčili o jejich nevině. Ostatní se snaží je usvědčit.\n");
+	     printf("ALTERNATIVNÍ PRAVIDLA: Oba vybraní se dohodnou, že budou popisovat víkend/dovolenou jednoho z nich a ostatní hádají, kdo ten víkend zažil. \n");
+	}
+	  else if( strcmp(nahledinput,"#11") == 0 || strcmp(nahledinput,"improvizace") == 0 ){
+	     printf("\t \t \t ******************\n");
+	     printf("\t \t \t *   IMPROVIZACE  *\n");
+	     printf("\t \t \t ******************\n");
+	     printf("REKVIZITY: -\n");
+	     printf("PRAVIDLA: Cílem této hry je, aby skupina lidí bez jakékoliv předchozí domluvy nebo pomůcek sehrála krátké scénky. To se může zdát náročné, ale scénky stejně většinou nemají žádnou úroveň a vtip hry spočívá v tom, jaká blbost koho napadne. Zde je seznam herních módů, podle kterých se dají sehrát scénky:\n");
+	     printf("NA CO SI DÁT POZOR: Herci musí být čelem k publiku. Měli by také mluvit nahlas a přehánět svá gesta. Také dejte pozor, aby se do hry zapojil každý a zkuste motivovat introvertnější hráče.");
+	     printf("ALTERNATIVNÍ PRAVIDLA: \n");
+	     printf("\t -VYVOLÁVACÍ IMPROVIZACE: Na scéně je cca. pětičlenný tým, kterému se zadá herní téma (např. Černobyl, pět minut před výbuchem). Každý z hráčů si pak vezme klíčové slovo, které se vztahuje k tématu, ale které NEZTVÁRŇUJE ve hře. Někdo by si třeba mohl vzít slovo uklízečka, ale nehrál by uklízečku. Hra začne jedním hráčem na scénce, který si musí vymyslet kdo je a co dělá. Pokud některý hráč na scéně řekne nějaké klíčové slovo, musí ten hráč, koho je, vstoupit na scénu a vymyslet si pro to důvod a říct ho. Pokud je naopak zmíněno klíčové slovo hráče na scéně, musí ten hráč odejít a opět pro to vymyslet důvod a říct ho. Scénka končí tím, že jeden člověk odchází a při odchodu řekne jméno druhého a odejdou oba.\n");
+	     printf("\t -TLESKACÍ IMPROVIZACE: Na scéně začnou dva lidé rozehrávat scénku a zbylí sedí jako publikum. Kdokoliv z publika následně může tlesknout, scénku zastavit (herci se zmrazí) a nahradit jednoho z herců (toho, který je tam déle). Musí však rozehrát kompletně jinou scénku a zaujmout kompletně jinou roli. Pozn.: může se hodit pravidlo, že se scénka musí nechat rozehrát alespoň nějaký čas, ať pořád všichni netleskají a je vidět smysl scénky.\n" );
+	     printf("\t -ČASOVÁ IMPROVIZACE: Dva lidé musí sehrát tu samou scénku, kterou poprvé improvizují (téma se jim zadá) za minutu, půl minuty, deset sekund, pět sekund a sekundu. Na konci scénky musí jeden z nich zemřít.\n");
+	     printf("\t -BÁSEŇ: Herci si sednou vedle sebou na stoličky a popořadě říká každý jedno slovo. Jejich cílem je vytvořit báseň, nebo příběh (vyberte předem).\n");
+	     printf("\t -SKŘÍŇ: Vybere se jeden člověk, který předstírá, že otevře skříň a vytáhne z ní předmět, který by chtěl. Následně musí ten předmět předvést pantomimou a publikum se ho snaží uhodnout. Kdo ho uhodl, vytahuje ze skříně příště. \n");
+	     printf("\t -PŘEBÍJECÍ IMPROVIZACE: Jeden člověk začne v poli tím, že něco předvede (např. skříň, auto, zeď...). Následně dobrovolník z publika tleskne a na jevišti předvede něco, co to přebije. Potom další dobrovolník tleskne a přebije to... Takto se vytvoří kaskáda přebíjecích reakcí.\n ");
+	     printf("\t -REKLAMACE: Dva lidé se vžijí do role prodejců a jiní dva do role nespokojených zákazníků, kteří přišli reklamovat své zboží. Háček se schovává v tom, že reklamovaná věc se určí dohromady v publiku a ti, kteří reklamují ji neznají. Jejich úkolem je tedy přijít na to, co reklamují, ale stále dodržovat roli toho, že jsou v obchodu a jsou naštvaný záklazník. Hra končí, jakmile reklamující uhodnou reklamovanou věc.\n");
+	}
+
+	  else if( strcmp(nahledinput,"#12") == 0 || strcmp(nahledinput,"fotbika") == 0 ){
+	     printf("\t \t \t **************\n");
+	     printf("\t \t \t *   FOTBIKA  *\n");
+	     printf("\t \t \t **************\n");
+	     printf("REKVIZITY: tenisák, místnost\n");
+	     printf("PRAVIDLA: Hra se hraje jako vybíjená akorát s tím rozdílem, že míček je tenisák a smí se pouze kopat. Vybijí se pak pouze v prostoru od chodidel do kolen (včetně). Už je jen na Vás, jestli vybika bude vracecí a jestli povolíte chytání míčku nohou tak, že ho člověk jednoznačně zašlápne.\n");
+	     printf("ALTERNATIVNÍ PRAVIDLA:\n");
+	     printf("FOTBIKA MASAKR 100 %% EXTREME MILIÓN: Hraje se jako normální fotbika s tím rozdílem, že hráči musí skákat po jedné noze. \n");
+	}
+ 
+	  else if( strcmp(nahledinput,"#13") == 0 || strcmp(nahledinput,"komandohopsando") == 0 ){
+	     printf("\t \t \t *********************** \n");
+	     printf("\t \t \t *   KOMANDO HOPSANDO  * \n");
+	     printf("\t \t \t *********************** \n");
+	     printf("\t \t \t REKVIZITY: stůl s židlemi\n");
+	     printf("PRAVIDLA: Hra se hraje tak, že všichni sedí u stolu. Princip hry se podobá hře Simon says, což znamená, že se určí jeden game master, který diktuje ostatním, jakou polohu rukou vzhledem ke stolu mají mít, avšak ostatní to mají provést jen pokud před tím řekne KOMANDO. Ve hře jsou tři polohy rukou:\n \t -HOPSANDO: hráči mají ruce ve tvaru pistole a ťukají do stolu \n \t -DUTO: hráči se dotýkají stolu špičkami prstů avšak ne dlaní \n \t -PLOCHO: hráči mají natažené prsty a dotýkají se dlaní stolu \n Game master si tedy s rukama dělá, co chce, a říká ostatním příkazy. Hráč vypadne, pokud nesplní příkaz, před kterým je KOMANDO nebo pokud splní příkaz před kterým není KOMANDO. Vyhrává ten, kdo zůstane jako poslední. Ten je v příštím kole gamemaster.\n ");
+	     printf("ALTERNATIVNÍ PRAVIDLA: po konci kola může výherce vymyslet novou polohu rukou, se kterou se bude hrát, a pojmenovat ji\n");
+	}
+	  else if( strcmp(nahledinput,"#14") == 0 || strcmp(nahledinput,"elektrika") == 0 ){
+	     printf("\t \t \t ******************** \n");
+	     printf("\t \t \t *     ELEKTRIKA    * \n");
+	     printf("\t \t \t ******************** \n");
+	     printf("REKVIZITY:dobře uchopitelný předmět, mince, stůl s židlemi\n");
+	     printf("PRAVIDLA: Utvoří se dva stejně početné týmy lidí, které se posadí naproti sobě okolo stolu a chytnou se za ruce. K jednomu z čel stolu se posadí vhazovač a ke druhému se postaví stolička, na kterou se položí jeden dobře uchopitelný předmět (flaška s vodou, petangová koule aj.). Oba hráči, kteří mají k předmětu nejblíže, k němu musí mít stejně daleko. Hráči nejblíže ke vhazovači se na něj dívají, ostatní se musí dívat směrem k předmětu. Hra probíhá tak, že vhazovač hodí mincí a když padne pana, poteče elektrika, když ne, tak nepoteče. Jakmile teče elektrika, musí ti, co se dívají na minci poslat stisknutím ruky signál ostatním z týmu, kteří si ho předají. Až signál dojde k poslednímu člověku, musí uchopit předmět. Ten tým, který uchopí předmět, dostane bod a všichni z týmu se posunou o jedno místo doprava. Pokud tým chytne flašku a neteče elektrika, posune se tým opačně. Hra končí tím, že se jeden tým vystřídá na všech pozicích (jednou nebo vícekrát).\n");
+	}
+
+      	  else if( strcmp(nahledinput,"#15") == 0 || strcmp(nahledinput,"cinkačka") == 0 ){
+	     printf("\t \t \t ******************* \n");
+	     printf("\t \t \t *     CINKAČKA    * \n");
+	     printf("\t \t \t ******************* \n");
+	     printf("REKVIZITY: tři mince s pokud možno různou velikostí, stůl\n");
+	     printf("PRAVIDLA: Hráči se rozdělí na dva týmy a sednou si proti sobě ke stolu. Hra probíhá tak, že tým, který je na řadě, si tajně mezi sebou pod stolem podá mince a poté položí lokty na stůl a zavře pěsti, aby nešlo vidět, kdo má mince. Všichni najednou následovně bouchnou rukama o stůl tak, aby mince zůstaly neviděny a přikryty. Druhý tým má 4 pokusy na to, aby odhalil, kde jsou mince tím, že odkryje libovolnou ruku. Lokaci mince lze určit pomocí zvuku, který vydávají mince při bouchnutí o stůl.\n");
+	     printf("POZN.: V týmu se lidé hodně hádají, takže se vyplatí určit jednoho zástupce a jedině on může určit, kterou ruku má protitým nadzvednout.\n ");
+	} 
+
+      	  else if( strcmp(nahledinput,"#16") == 0 || strcmp(nahledinput,"pašerák") == 0 ){
+	     printf("\t \t \t ***************** \n");
+	     printf("\t \t \t *    PAŠERÁK    * \n");
+	     printf("\t \t \t ***************** \n");
+	     printf("REKVIZITY: provaz, předměty, které se lehce dají skrýt na člověku\n");
+	     printf("PRAVIDLA: Hráči se rozdělí na dva týmy - celníky a pašeráky (celníků je méně než pašeráků, poměr zhruba 3:2). Provazem se ohraničí kruh s poloměrem cca. 2 metry, který bude představovat zahraničí pro pašeráky. Určí se ještě území kolem zahraničí, které představuje celnici, a která je velká až 50 metrů. Úkolem pašeráků je mimo celnici se tajně smluvit, u nějakého pašeráka schovat pašovaný předmět a onen předmět propašovat do zahraničí. Stačí tedy, aby se člověk i s předmětem dostali do zahraničí a pašeráci vyhrají. Celníci vyhrají, když chytí pašeráka s předmětem, nebo uplyne předem stanovený limit. Pokud je pašerák v celnici, mohou ho celníci chytit a prošacovat (šacovat mohou jak dlouho chtějí, klidně i nemusejí). Pokud se celník dotkne pašeráka a nic nenajde, musí se pašerák vrátit zpět do mimo celnici a zahraničí. Pokud celníci chytí pašeráka a najdou předmět, pašeráci prohráli.\n");
+	}
+
+	 else if( strcmp(nahledinput,"#17") == 0 || strcmp(nahledinput,"evilmultitasking") == 0 ){
+	     printf("\t \t \t *************************** \n");
+	     printf("\t \t \t *    EVIL MULTITASKING    * \n");
+	     printf("\t \t \t *************************** \n");
+	     printf("REKVIZITY: tři a více tenisáků\n");
+	     printf("PRAVIDLA: Hráči se postaví do kruhu a hází si mezi sebou tenisáky. Mínusový bod dostane ten, kdo tenisák nechytí, nebo ho hodí tak, že nejde chytit. Taky ho však dostane ten, kdo má u sebe víc než jeden tenisák najednou. Vyhrává ten, kdo má nejméně mínusových bodů na konci hry. Smysl této hry spočívá v tom, že se hráči spiknou proti jiným hráčům a hodí mu několik tenisáků najednou a on musí reagovat rychle.\n");
+	}  
+	else if( strcmp(nahledinput,"#18") == 0 || strcmp(nahledinput,"plácačka") == 0 ){
+	     printf("\t \t \t ***************** \n");
+	     printf("\t \t \t *   PLÁCAČKA    * \n");
+	     printf("\t \t \t ***************** \n");
+	     printf("REKVIZITY: - \n");
+	     printf("PRAVIDLA: Utvoří se dvě řady hráčů, které se postaví naproti sobě ve vzdálenosti cca. 10 metrů. Hra probíhá tak, že na střídačku proti sobě řady posílají jednoho člověka. Vyslanec přijde k řadě lidí, kteří musí před sebe natáhnout obě ruce dlaněmi nahoru. Vyslanec poté musí plácnout tři dlaně z druhé řady. Jakmile plácne třetí, stane se jeho cílem doběhnout za svoji řadu a cílem plánutého se stane se ho dotknout. Komu se cíl podaří, ten konvertuje toho druhého do své řady. Hra skončí, až zbyde jen jedna řada (nebo tak, že zbyde jen člověk se dvěma rukama, kterého nebude moci druhá řada plácnout, a tak prohraje).\n");
+	}
+
+	  else if( strcmp(nahledinput,"#19") == 0 || strcmp(nahledinput,"tramvaj") == 0 ){
+	     printf("\t \t \t ********************************** \n");
+	     printf("\t \t \t *   TRAMVAJ / HOŘÍCÍ MRAKODRAP   * \n");
+	     printf("\t \t \t ********************************** \n");
+	     printf("REKVIZITY: lano \n");
+	     printf("PRAVIDLA: Utvořte kruh z lana, do kterého si stoupnou všichni hráči. Je to hořící mrakodrap, ze kterého není úniku. Naštěstí přilétá vrtulník, ale v něm je místo pouze na jednoho hráče. Hráči se tedy snaží vytlačit ostatní z kruhu, aby vrtulník zachránil právě je.\n");
+	     printf("POZN.: Určete jasně hranici vypadnutí z mrakodrapu, aby nenastaly sporné situace. Např. obě nohy ven z kruhu, polovina těla... Můžete také určit soudce, který bude nad hrou dohlížet a sporné případy rozhodovat.\n");
+	  }
+
+
+	  else if( strcmp(nahledinput,"#20") == 0 || strcmp(nahledinput,"australskýfotbal") == 0 ){
+	     printf("\t \t \t ************************ \n");
+	     printf("\t \t \t *   AUSTRALSKÝ FOTBAL   * \n");
+	     printf("\t \t \t ************************* \n");
+	     printf("REKVIZITY: tenisák\n");
+	     printf("PRAVIDLA: Hráči se postaví do kruhu (=na obvod pomyslné kružnice) čelem ven a tak, aby se dotýkali nohama. Potom se shýbnou, aby se koukali mezi rozkročeným nohama. Jejich rozkročené nohy jsou branky. Dovnitř se hodí míč a hráči se snaží prohodit míč brankami ostatních. Pokud hráči někdo prohodí míč mezi nohama, nebo se hráč narovná, ztrácí jednu ruku, a když nemá ruku, tak vypadává. Hráči nesmí střílet na lidi těsně vedle sebe, takže vyhrávají poslední tři lidé.\n");
+
+	  }
+  
+	else{
+	printf("Toto ID neexistuje\n");
+	}
+
+
 }
-
-
-
-
-
-
-// if(counter % 2 == 0){printf("          ");} else{printf("..........");}
