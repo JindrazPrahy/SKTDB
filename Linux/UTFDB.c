@@ -35,7 +35,7 @@ printf("Napsali jste: %s \n", input);
 if(strcmp(input, "help") == 0 || strcmp(input, "pomoc") == 0){ 	/*nápověda*/
 	printf("Seznam příkazů:\n help  --> pomoc\n konec --> ukončit program\n hry   --> zobrazí seznam všech her\n filtr --> vyhledávání \n cisto --> vyčistí obrazovku\n");   goto LOOP;
 } 
-if(strcmp(input, "konec") == 0 || strcmp(input, "k") == 0){  /*ukončení­ programu*/
+if(strcmp(input, "konec") == 0 || strcmp(input, "k") == 0 || strcmp(input, "exit") == 0){  /*ukončení­ programu*/
 	printf("		Nashledanou \n");
 	goto END;
 }
@@ -184,6 +184,7 @@ bool tramvaj = false;         bool ausfot = false;
 
 
 ZOBRAZ: printf("________________________________________________________________________________________________________________ \n");
+	printf("________________________________________________________________________________________________________________ \n");
 	printf("		>>> SEZNAM ");
 		if(b == true){printf("BRUTÁLNÍCH ");} if(m == true){printf("PŘEMÝŠLECÍCH ");} if(p == true){printf("POHODOVÝCH ");} if(sp == true){printf("SPECIÁLNÍCH ");}
 		if(noc == true){printf("NOČNÍCH ");} printf("HER "); if(beh == true){printf(" \' BĚHAČEK \'");}
@@ -309,7 +310,8 @@ if(ausfot == 1       ){ printf("%d",counter);if(counter<=9){printf(".");}printf(
 
 char nahled(char nahledinput[20]){
 	if(strcmp(nahledinput,"#01")==0 || strncmp(nahledinput,"dementbal", 9)==0){ /* dementball */
-		printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+		printf("________________________________________________________________________________________________________________ \n");
+		printf("________________________________________________________________________________________________________________ \n");
 		printf("   _____                                        _   __               __   __ 	 	 \n");
 		printf(" |_   _`.         10 minut                    / |_[  |             [  | [  | 		 HRA\n");
   		printf("   | | `.\\  .---.  _ .--..--.  .---.  _ .--. `| |-'| |.--.   ,--.   | |  | | 		 POHODOVÁ\n");
@@ -380,16 +382,19 @@ char nahled(char nahledinput[20]){
 	  printf("ALTERNATIVNÍ PRAVIDLA: Odmrazuje se podlezením nohou (jako v mrazíkovi) a ne dotykem.\n");
 	}
 	else if(strcmp(nahledinput,"#05")==0 || strcmp(nahledinput,"komar")==0 || strcmp(nahledinput,"komár")==0){
-	  printf("\t \t \t ************* \n");
-	  printf("\t \t \t *   KOMÁR   * \n");
-	  printf("\t \t \t ************* \n \n");
-	  printf("REKVIZITY: Stolička, šátek na zavázání očí, mikina na vytvoření palcátu\n");
-	  printf("PRAVIDLA: Určí se jeden hráč, jehož úkol se stane reprezentovat člověka. Ostatní lidé reprezentují komáry. Člověk si sedne na stoličku doprostřed místnosti, do ruky dostane zavázanou mikinu, či šátek, kterým lze bezbolestně mlátit (tzn.  noviny) a zaváže si oči. Úkolem komárů se stane vysávat krev člověku. To provedou tak, že se ho dotknou a poté se dotknou stěny (tím získají bod). Člověk se však ohání novinami a pokud nějakého komára zasáhne, je do konce kola vyřazen. Cílem komárů je dostat co nejvíce bodů a cílem člověka je sejmout všechny komáry.\n");
-	  printf("DODATEČNÁ PRAVIDLA: Komáři nemohou umřít, pokud nemají žádné body.\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ************* \n");
+	    printf("\t \t \t *   KOMÁR   * \n");
+	    printf("\t \t \t ************* \n \n");
+	    printf("REKVIZITY: Stolička, šátek na zavázání očí, mikina na vytvoření palcátu\n");
+	    printf("PRAVIDLA: Určí se jeden hráč, jehož úkol se stane reprezentovat člověka. Ostatní lidé reprezentují komáry. Člověk si sedne na stoličku doprostřed místnosti, do ruky dostane zavázanou mikinu, či šátek, kterým lze bezbolestně mlátit (tzn.  noviny) a zaváže si oči. Úkolem komárů se stane vysávat krev člověku. To provedou tak, že se ho dotknou a poté se dotknou stěny (tím získají bod). Člověk se však ohání novinami a pokud nějakého komára zasáhne, je do konce kola vyřazen. Cílem komárů je dostat co nejvíce bodů a cílem člověka je sejmout všechny komáry.\n");
+	    printf("DODATEČNÁ PRAVIDLA: Komáři nemohou umřít, pokud nemají žádné body.\n");
 	}
 	
 	else if( strcmp(nahledinput,"#06") == 0 || strcmp(nahledinput,"kikikokokeke")==0  ){ /* KIKIKOKOKEKE */	
-	  printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
 	    printf("\t \t \t ****************\n");
 	    printf("\t \t \t * KIKIKOKOKEKE *\n");
 	    printf("\t \t \t ****************\n \n");
@@ -397,7 +402,8 @@ char nahled(char nahledinput[20]){
 	    printf("PRAVIDLA: Hráči se rozdělí na tři týmy: KI, KO a KE. Každý z týmů musí po celou dobu říkat jméno týmu, ve kterém právě je. Následně se hráči snaží chytit hráče jiných týmů, proti kterým jsou silní, a tím je konvertovat do svého týmu. Platí, že KI jsou silní proti KO, KO proti KE a KE proti KI. Vyhrajou ti, kteří skončí a jsou co nejméněkrát konvertováni.\n");	
 	}
         else if( strcmp(nahledinput,"#07") == 0 || strcmp(nahledinput,"maso")==0  ){ 
-	  printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
 	    printf("\t \t \t ***************\n");
 	    printf("\t \t \t *     MASO    *\n");
 	    printf("\t \t \t ***************\n \n");
@@ -405,7 +411,8 @@ char nahled(char nahledinput[20]){
 	    printf("PRAVIDLA: Zdůrazněte, že v této hře hraje každý sám za sebe. Určete jeden předmět, např. tenisák, který se stane ústředním předmětem hry. Hráči se po zahájení hry - vhození tenisáku do davu - snaží převzít kontrolu nad tenisákem a dotknout se jím dveří (nebo jiného určeného objektu). Háček je v tom, že každý se o to pokouší sám za sebe, a tak nastane pěkná mela.\n");
 	}
         else if( strcmp(nahledinput,"#08") == 0 || strcmp(nahledinput,"talismánek")==0  ){ 
-	  printf("________________________________________________________________________________________________________________ \n");printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
 	    printf("\t \t \t ****************\n");
 	    printf("\t \t \t *  TALISMÁNEK  *\n");
 	    printf("\t \t \t ****************\n \n");
@@ -413,111 +420,136 @@ char nahled(char nahledinput[20]){
 	    printf("PRAVIDLA: Rozdělte hráče do minimálně tří stejně početných týmů. Doprostřed herního pole položte \' talismánek\' v podobě velké klády, či jiného těžkého předmětu. Následně rozdělte každému týmu stanoviště stejně daleko od talismánku. Cílem každého týmu je dostat talismánek do svého stanoviště.\n Na hře lze skvěle demonstrovat princip superpozice.\n");
 	}
 	else if( strcmp(nahledinput,"#09") == 0 || strcmp(nahledinput,"králnidoriamy") == 0 ){
-	     printf("\t \t \t ********************* \n");
-	     printf("\t \t \t *   KRÁL NIDORIAMY  * \n");
-	     printf("\t \t \t ********************* \n");
-	     printf("REKVIZITY: -\n");
-	     printf("PRAVIDLA: Určete nějaké hrací pole, jako např. louka. Poté rozdělte hráče do několika týmů. Hra probíhá tak, že hráči různě chodí po louce a snaží se navzájem zalehávat. Vítězí poté tým, který má na konci nejvíce lidí na vršku hromad. Za každou hromadu zalehlých lidí tedy dostane bod pouze ten tým, který má někoho na vrchu a vítězí tým s nejvíce body.\n");
+  	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ********************* \n");
+	    printf("\t \t \t *   KRÁL NIDORIAMY  * \n");
+	    printf("\t \t \t ********************* \n");
+	    printf("REKVIZITY: -\n");
+	    printf("PRAVIDLA: Určete nějaké hrací pole, jako např. louka. Poté rozdělte hráče do několika týmů. Hra probíhá tak, že hráči různě chodí po louce a snaží se navzájem zalehávat. Vítězí poté tým, který má na konci nejvíce lidí na vršku hromad. Za každou hromadu zalehlých lidí tedy dostane bod pouze ten tým, který má někoho na vrchu a vítězí tým s nejvíce body.\n");
 	}
       	else if( strcmp(nahledinput,"#10") == 0 || strcmp(nahledinput,"aliby") == 0 ){
-	     printf("\t \t \t ************ \n");
-	     printf("\t \t \t *   ALIBY  * \n");
-	     printf("\t \t \t ************ \n");
-	     printf("REKVIZITY: židle na usazení vyslýchaných\n");
-	     printf("PRAVIDLA: Vyberte dva hráče, kteří se odeberou z doslechu ostatních (třeba za dveře). Jejich úkolem je domluvit si společné aliby. Poté zbytek hráčů po jednom oba vybrané předvolá a nařkne je z nějakého trestného činu (např. vražda rychlovarnou konvicí). Vybraným se pak kladou otázky a sleduje se, jak odpovídají. Cílem dvou dobrovolníků je, aby jejich výpovědi byly co nejvíce identické a svědčili o jejich nevině. Ostatní se snaží je usvědčit.\n");
+   	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ************ \n");
+	    printf("\t \t \t *   ALIBY  * \n");
+	    printf("\t \t \t ************ \n");
+	    printf("REKVIZITY: židle na usazení vyslýchaných\n");
+	    printf("PRAVIDLA: Vyberte dva hráče, kteří se odeberou z doslechu ostatních (třeba za dveře). Jejich úkolem je domluvit si společné aliby. Poté zbytek hráčů po jednom oba vybrané předvolá a nařkne je z nějakého trestného činu (např. vražda rychlovarnou konvicí). Vybraným se pak kladou otázky a sleduje se, jak odpovídají. Cílem dvou dobrovolníků je, aby jejich výpovědi byly co nejvíce identické a svědčili o jejich nevině. Ostatní se snaží je usvědčit.\n");
 	     printf("ALTERNATIVNÍ PRAVIDLA: Oba vybraní se dohodnou, že budou popisovat víkend/dovolenou jednoho z nich a ostatní hádají, kdo ten víkend zažil. \n");
 	}
 	  else if( strcmp(nahledinput,"#11") == 0 || strcmp(nahledinput,"improvizace") == 0 ){
-	     printf("\t \t \t ******************\n");
-	     printf("\t \t \t *   IMPROVIZACE  *\n");
-	     printf("\t \t \t ******************\n");
-	     printf("REKVIZITY: -\n");
-	     printf("PRAVIDLA: Cílem této hry je, aby skupina lidí bez jakékoliv předchozí domluvy nebo pomůcek sehrála krátké scénky. To se může zdát náročné, ale scénky stejně většinou nemají žádnou úroveň a vtip hry spočívá v tom, jaká blbost koho napadne. Zde je seznam herních módů, podle kterých se dají sehrát scénky:\n");
-	     printf("NA CO SI DÁT POZOR: Herci musí být čelem k publiku. Měli by také mluvit nahlas a přehánět svá gesta. Také dejte pozor, aby se do hry zapojil každý a zkuste motivovat introvertnější hráče.");
-	     printf("ALTERNATIVNÍ PRAVIDLA: \n");
-	     printf("\t -VYVOLÁVACÍ IMPROVIZACE: Na scéně je cca. pětičlenný tým, kterému se zadá herní téma (např. Černobyl, pět minut před výbuchem). Každý z hráčů si pak vezme klíčové slovo, které se vztahuje k tématu, ale které NEZTVÁRŇUJE ve hře. Někdo by si třeba mohl vzít slovo uklízečka, ale nehrál by uklízečku. Hra začne jedním hráčem na scénce, který si musí vymyslet kdo je a co dělá. Pokud některý hráč na scéně řekne nějaké klíčové slovo, musí ten hráč, koho je, vstoupit na scénu a vymyslet si pro to důvod a říct ho. Pokud je naopak zmíněno klíčové slovo hráče na scéně, musí ten hráč odejít a opět pro to vymyslet důvod a říct ho. Scénka končí tím, že jeden člověk odchází a při odchodu řekne jméno druhého a odejdou oba.\n");
-	     printf("\t -TLESKACÍ IMPROVIZACE: Na scéně začnou dva lidé rozehrávat scénku a zbylí sedí jako publikum. Kdokoliv z publika následně může tlesknout, scénku zastavit (herci se zmrazí) a nahradit jednoho z herců (toho, který je tam déle). Musí však rozehrát kompletně jinou scénku a zaujmout kompletně jinou roli. Pozn.: může se hodit pravidlo, že se scénka musí nechat rozehrát alespoň nějaký čas, ať pořád všichni netleskají a je vidět smysl scénky.\n" );
-	     printf("\t -ČASOVÁ IMPROVIZACE: Dva lidé musí sehrát tu samou scénku, kterou poprvé improvizují (téma se jim zadá) za minutu, půl minuty, deset sekund, pět sekund a sekundu. Na konci scénky musí jeden z nich zemřít.\n");
-	     printf("\t -BÁSEŇ: Herci si sednou vedle sebou na stoličky a popořadě říká každý jedno slovo. Jejich cílem je vytvořit báseň, nebo příběh (vyberte předem).\n");
-	     printf("\t -SKŘÍŇ: Vybere se jeden člověk, který předstírá, že otevře skříň a vytáhne z ní předmět, který by chtěl. Následně musí ten předmět předvést pantomimou a publikum se ho snaží uhodnout. Kdo ho uhodl, vytahuje ze skříně příště. \n");
-	     printf("\t -PŘEBÍJECÍ IMPROVIZACE: Jeden člověk začne v poli tím, že něco předvede (např. skříň, auto, zeď...). Následně dobrovolník z publika tleskne a na jevišti předvede něco, co to přebije. Potom další dobrovolník tleskne a přebije to... Takto se vytvoří kaskáda přebíjecích reakcí.\n ");
-	     printf("\t -REKLAMACE: Dva lidé se vžijí do role prodejců a jiní dva do role nespokojených zákazníků, kteří přišli reklamovat své zboží. Háček se schovává v tom, že reklamovaná věc se určí dohromady v publiku a ti, kteří reklamují ji neznají. Jejich úkolem je tedy přijít na to, co reklamují, ale stále dodržovat roli toho, že jsou v obchodu a jsou naštvaný záklazník. Hra končí, jakmile reklamující uhodnou reklamovanou věc.\n");
+ 	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ******************\n");
+	    printf("\t \t \t *   IMPROVIZACE  *\n");
+	    printf("\t \t \t ******************\n");
+	    printf("REKVIZITY: -\n");
+	    printf("PRAVIDLA: Cílem této hry je, aby skupina lidí bez jakékoliv předchozí domluvy nebo pomůcek sehrála krátké scénky. To se může zdát náročné, ale scénky stejně většinou nemají žádnou úroveň a vtip hry spočívá v tom, jaká blbost koho napadne. Zde je seznam herních módů, podle kterých se dají sehrát scénky:\n");
+	    printf("NA CO SI DÁT POZOR: Herci musí být čelem k publiku. Měli by také mluvit nahlas a přehánět svá gesta. Také dejte pozor, aby se do hry zapojil každý a zkuste motivovat introvertnější hráče.");
+	    printf("ALTERNATIVNÍ PRAVIDLA: \n");
+	    printf("\t -VYVOLÁVACÍ IMPROVIZACE: Na scéně je cca. pětičlenný tým, kterému se zadá herní téma (např. Černobyl, pět minut před výbuchem). Každý z hráčů si pak vezme klíčové slovo, které se vztahuje k tématu, ale které NEZTVÁRŇUJE ve hře. Někdo by si třeba mohl vzít slovo uklízečka, ale nehrál by uklízečku. Hra začne jedním hráčem na scénce, který si musí vymyslet kdo je a co dělá. Pokud některý hráč na scéně řekne nějaké klíčové slovo, musí ten hráč, koho je, vstoupit na scénu a vymyslet si pro to důvod a říct ho. Pokud je naopak zmíněno klíčové slovo hráče na scéně, musí ten hráč odejít a opět pro to vymyslet důvod a říct ho. Scénka končí tím, že jeden člověk odchází a při odchodu řekne jméno druhého a odejdou oba.\n");
+	    printf("\t -TLESKACÍ IMPROVIZACE: Na scéně začnou dva lidé rozehrávat scénku a zbylí sedí jako publikum. Kdokoliv z publika následně může tlesknout, scénku zastavit (herci se zmrazí) a nahradit jednoho z herců (toho, který je tam déle). Musí však rozehrát kompletně jinou scénku a zaujmout kompletně jinou roli. Pozn.: může se hodit pravidlo, že se scénka musí nechat rozehrát alespoň nějaký čas, ať pořád všichni netleskají a je vidět smysl scénky.\n" );
+	    printf("\t -ČASOVÁ IMPROVIZACE: Dva lidé musí sehrát tu samou scénku, kterou poprvé improvizují (téma se jim zadá) za minutu, půl minuty, deset sekund, pět sekund a sekundu. Na konci scénky musí jeden z nich zemřít.\n");
+	    printf("\t -BÁSEŇ: Herci si sednou vedle sebou na stoličky a popořadě říká každý jedno slovo. Jejich cílem je vytvořit báseň, nebo příběh (vyberte předem).\n");
+	    printf("\t -SKŘÍŇ: Vybere se jeden člověk, který předstírá, že otevře skříň a vytáhne z ní předmět, který by chtěl. Následně musí ten předmět předvést pantomimou a publikum se ho snaží uhodnout. Kdo ho uhodl, vytahuje ze skříně příště. \n");
+	    printf("\t -PŘEBÍJECÍ IMPROVIZACE: Jeden člověk začne v poli tím, že něco předvede (např. skříň, auto, zeď...). Následně dobrovolník z publika tleskne a na jevišti předvede něco, co to přebije. Potom další dobrovolník tleskne a přebije to... Takto se vytvoří kaskáda přebíjecích reakcí.\n ");
+	    printf("\t -REKLAMACE: Dva lidé se vžijí do role prodejců a jiní dva do role nespokojených zákazníků, kteří přišli reklamovat své zboží. Háček se schovává v tom, že reklamovaná věc se určí dohromady v publiku a ti, kteří reklamují ji neznají. Jejich úkolem je tedy přijít na to, co reklamují, ale stále dodržovat roli toho, že jsou v obchodu a jsou naštvaný záklazník. Hra končí, jakmile reklamující uhodnou reklamovanou věc.\n");
 	}
 
 	  else if( strcmp(nahledinput,"#12") == 0 || strcmp(nahledinput,"fotbika") == 0 ){
-	     printf("\t \t \t **************\n");
-	     printf("\t \t \t *   FOTBIKA  *\n");
-	     printf("\t \t \t **************\n");
-	     printf("REKVIZITY: tenisák, místnost\n");
-	     printf("PRAVIDLA: Hra se hraje jako vybíjená akorát s tím rozdílem, že míček je tenisák a smí se pouze kopat. Vybijí se pak pouze v prostoru od chodidel do kolen (včetně). Už je jen na Vás, jestli vybika bude vracecí a jestli povolíte chytání míčku nohou tak, že ho člověk jednoznačně zašlápne.\n");
-	     printf("ALTERNATIVNÍ PRAVIDLA:\n");
-	     printf("FOTBIKA MASAKR 100 %% EXTREME MILIÓN: Hraje se jako normální fotbika s tím rozdílem, že hráči musí skákat po jedné noze. \n");
+ 	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t **************\n");
+	    printf("\t \t \t *   FOTBIKA  *\n");
+	    printf("\t \t \t **************\n");
+	    printf("REKVIZITY: tenisák, místnost\n");
+	    printf("PRAVIDLA: Hra se hraje jako vybíjená akorát s tím rozdílem, že míček je tenisák a smí se pouze kopat. Vybijí se pak pouze v prostoru od chodidel do kolen (včetně). Už je jen na Vás, jestli vybika bude vracecí a jestli povolíte chytání míčku nohou tak, že ho člověk jednoznačně zašlápne.\n");
+	    printf("ALTERNATIVNÍ PRAVIDLA:\n");
+	    printf("FOTBIKA MASAKR 100 %% EXTREME MILIÓN: Hraje se jako normální fotbika s tím rozdílem, že hráči musí skákat po jedné noze. \n");
 	}
  
 	  else if( strcmp(nahledinput,"#13") == 0 || strcmp(nahledinput,"komandohopsando") == 0 ){
-	     printf("\t \t \t *********************** \n");
-	     printf("\t \t \t *   KOMANDO HOPSANDO  * \n");
-	     printf("\t \t \t *********************** \n");
-	     printf("\t \t \t REKVIZITY: stůl s židlemi\n");
-	     printf("PRAVIDLA: Hra se hraje tak, že všichni sedí u stolu. Princip hry se podobá hře Simon says, což znamená, že se určí jeden game master, který diktuje ostatním, jakou polohu rukou vzhledem ke stolu mají mít, avšak ostatní to mají provést jen pokud před tím řekne KOMANDO. Ve hře jsou tři polohy rukou:\n \t -HOPSANDO: hráči mají ruce ve tvaru pistole a ťukají do stolu \n \t -DUTO: hráči se dotýkají stolu špičkami prstů avšak ne dlaní \n \t -PLOCHO: hráči mají natažené prsty a dotýkají se dlaní stolu \n Game master si tedy s rukama dělá, co chce, a říká ostatním příkazy. Hráč vypadne, pokud nesplní příkaz, před kterým je KOMANDO nebo pokud splní příkaz před kterým není KOMANDO. Vyhrává ten, kdo zůstane jako poslední. Ten je v příštím kole gamemaster.\n ");
-	     printf("ALTERNATIVNÍ PRAVIDLA: po konci kola může výherce vymyslet novou polohu rukou, se kterou se bude hrát, a pojmenovat ji\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+
+	    printf("\t \t \t *********************** \n");
+	    printf("\t \t \t *   KOMANDO HOPSANDO  * \n");
+	    printf("\t \t \t *********************** \n");
+	    printf("\t \t \t REKVIZITY: stůl s židlemi\n");
+	    printf("PRAVIDLA: Hra se hraje tak, že všichni sedí u stolu. Princip hry se podobá hře Simon says, což znamená, že se určí jeden game master, který diktuje ostatním, jakou polohu rukou vzhledem ke stolu mají mít, avšak ostatní to mají provést jen pokud před tím řekne KOMANDO. Ve hře jsou tři polohy rukou:\n \t -HOPSANDO: hráči mají ruce ve tvaru pistole a ťukají do stolu \n \t -DUTO: hráči se dotýkají stolu špičkami prstů avšak ne dlaní \n \t -PLOCHO: hráči mají natažené prsty a dotýkají se dlaní stolu \n Game master si tedy s rukama dělá, co chce, a říká ostatním příkazy. Hráč vypadne, pokud nesplní příkaz, před kterým je KOMANDO nebo pokud splní příkaz před kterým není KOMANDO. Vyhrává ten, kdo zůstane jako poslední. Ten je v příštím kole gamemaster.\n ");
+	    printf("ALTERNATIVNÍ PRAVIDLA: po konci kola může výherce vymyslet novou polohu rukou, se kterou se bude hrát, a pojmenovat ji\n");
 	}
 	  else if( strcmp(nahledinput,"#14") == 0 || strcmp(nahledinput,"elektrika") == 0 ){
-	     printf("\t \t \t ******************** \n");
-	     printf("\t \t \t *     ELEKTRIKA    * \n");
-	     printf("\t \t \t ******************** \n");
-	     printf("REKVIZITY:dobře uchopitelný předmět, mince, stůl s židlemi\n");
-	     printf("PRAVIDLA: Utvoří se dva stejně početné týmy lidí, které se posadí naproti sobě okolo stolu a chytnou se za ruce. K jednomu z čel stolu se posadí vhazovač a ke druhému se postaví stolička, na kterou se položí jeden dobře uchopitelný předmět (flaška s vodou, petangová koule aj.). Oba hráči, kteří mají k předmětu nejblíže, k němu musí mít stejně daleko. Hráči nejblíže ke vhazovači se na něj dívají, ostatní se musí dívat směrem k předmětu. Hra probíhá tak, že vhazovač hodí mincí a když padne pana, poteče elektrika, když ne, tak nepoteče. Jakmile teče elektrika, musí ti, co se dívají na minci poslat stisknutím ruky signál ostatním z týmu, kteří si ho předají. Až signál dojde k poslednímu člověku, musí uchopit předmět. Ten tým, který uchopí předmět, dostane bod a všichni z týmu se posunou o jedno místo doprava. Pokud tým chytne flašku a neteče elektrika, posune se tým opačně. Hra končí tím, že se jeden tým vystřídá na všech pozicích (jednou nebo vícekrát).\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ******************** \n");
+	    printf("\t \t \t *     ELEKTRIKA    * \n");
+	    printf("\t \t \t ******************** \n");
+	    printf("REKVIZITY:dobře uchopitelný předmět, mince, stůl s židlemi\n");
+	    printf("PRAVIDLA: Utvoří se dva stejně početné týmy lidí, které se posadí naproti sobě okolo stolu a chytnou se za ruce. K jednomu z čel stolu se posadí vhazovač a ke druhému se postaví stolička, na kterou se položí jeden dobře uchopitelný předmět (flaška s vodou, petangová koule aj.). Oba hráči, kteří mají k předmětu nejblíže, k němu musí mít stejně daleko. Hráči nejblíže ke vhazovači se na něj dívají, ostatní se musí dívat směrem k předmětu. Hra probíhá tak, že vhazovač hodí mincí a když padne pana, poteče elektrika, když ne, tak nepoteče. Jakmile teče elektrika, musí ti, co se dívají na minci poslat stisknutím ruky signál ostatním z týmu, kteří si ho předají. Až signál dojde k poslednímu člověku, musí uchopit předmět. Ten tým, který uchopí předmět, dostane bod a všichni z týmu se posunou o jedno místo doprava. Pokud tým chytne flašku a neteče elektrika, posune se tým opačně. Hra končí tím, že se jeden tým vystřídá na všech pozicích (jednou nebo vícekrát).\n");
 	}
 
       	  else if( strcmp(nahledinput,"#15") == 0 || strcmp(nahledinput,"cinkačka") == 0 ){
-	     printf("\t \t \t ******************* \n");
-	     printf("\t \t \t *     CINKAČKA    * \n");
-	     printf("\t \t \t ******************* \n");
-	     printf("REKVIZITY: tři mince s pokud možno různou velikostí, stůl\n");
-	     printf("PRAVIDLA: Hráči se rozdělí na dva týmy a sednou si proti sobě ke stolu. Hra probíhá tak, že tým, který je na řadě, si tajně mezi sebou pod stolem podá mince a poté položí lokty na stůl a zavře pěsti, aby nešlo vidět, kdo má mince. Všichni najednou následovně bouchnou rukama o stůl tak, aby mince zůstaly neviděny a přikryty. Druhý tým má 4 pokusy na to, aby odhalil, kde jsou mince tím, že odkryje libovolnou ruku. Lokaci mince lze určit pomocí zvuku, který vydávají mince při bouchnutí o stůl.\n");
-	     printf("POZN.: V týmu se lidé hodně hádají, takže se vyplatí určit jednoho zástupce a jedině on může určit, kterou ruku má protitým nadzvednout.\n ");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ******************* \n");
+	    printf("\t \t \t *     CINKAČKA    * \n");
+	    printf("\t \t \t ******************* \n");
+	    printf("REKVIZITY: tři mince s pokud možno různou velikostí, stůl\n");
+	    printf("PRAVIDLA: Hráči se rozdělí na dva týmy a sednou si proti sobě ke stolu. Hra probíhá tak, že tým, který je na řadě, si tajně mezi sebou pod stolem podá mince a poté položí lokty na stůl a zavře pěsti, aby nešlo vidět, kdo má mince. Všichni najednou následovně bouchnou rukama o stůl tak, aby mince zůstaly neviděny a přikryty. Druhý tým má 4 pokusy na to, aby odhalil, kde jsou mince tím, že odkryje libovolnou ruku. Lokaci mince lze určit pomocí zvuku, který vydávají mince při bouchnutí o stůl.\n");
+	    printf("POZN.: V týmu se lidé hodně hádají, takže se vyplatí určit jednoho zástupce a jedině on může určit, kterou ruku má protitým nadzvednout.\n ");
 	} 
 
-      	  else if( strcmp(nahledinput,"#16") == 0 || strcmp(nahledinput,"pašerák") == 0 ){
-	     printf("\t \t \t ***************** \n");
-	     printf("\t \t \t *    PAŠERÁK    * \n");
-	     printf("\t \t \t ***************** \n");
-	     printf("REKVIZITY: provaz, předměty, které se lehce dají skrýt na člověku\n");
-	     printf("PRAVIDLA: Hráči se rozdělí na dva týmy - celníky a pašeráky (celníků je méně než pašeráků, poměr zhruba 3:2). Provazem se ohraničí kruh s poloměrem cca. 2 metry, který bude představovat zahraničí pro pašeráky. Určí se ještě území kolem zahraničí, které představuje celnici, a která je velká až 50 metrů. Úkolem pašeráků je mimo celnici se tajně smluvit, u nějakého pašeráka schovat pašovaný předmět a onen předmět propašovat do zahraničí. Stačí tedy, aby se člověk i s předmětem dostali do zahraničí a pašeráci vyhrají. Celníci vyhrají, když chytí pašeráka s předmětem, nebo uplyne předem stanovený limit. Pokud je pašerák v celnici, mohou ho celníci chytit a prošacovat (šacovat mohou jak dlouho chtějí, klidně i nemusejí). Pokud se celník dotkne pašeráka a nic nenajde, musí se pašerák vrátit zpět do mimo celnici a zahraničí. Pokud celníci chytí pašeráka a najdou předmět, pašeráci prohráli.\n");
+	  else if( strcmp(nahledinput,"#16") == 0 || strcmp(nahledinput,"pašerák") == 0 ){
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ***************** \n");
+	    printf("\t \t \t *    PAŠERÁK    * \n");
+	    printf("\t \t \t ***************** \n");
+	    printf("REKVIZITY: provaz, předměty, které se lehce dají skrýt na člověku\n");
+	    printf("PRAVIDLA: Hráči se rozdělí na dva týmy - celníky a pašeráky (celníků je méně než pašeráků, poměr zhruba 3:2). Provazem se ohraničí kruh s poloměrem cca. 2 metry, který bude představovat zahraničí pro pašeráky. Určí se ještě území kolem zahraničí, které představuje celnici, a která je velká až 50 metrů. Úkolem pašeráků je mimo celnici se tajně smluvit, u nějakého pašeráka schovat pašovaný předmět a onen předmět propašovat do zahraničí. Stačí tedy, aby se člověk i s předmětem dostali do zahraničí a pašeráci vyhrají. Celníci vyhrají, když chytí pašeráka s předmětem, nebo uplyne předem stanovený limit. Pokud je pašerák v celnici, mohou ho celníci chytit a prošacovat (šacovat mohou jak dlouho chtějí, klidně i nemusejí). Pokud se celník dotkne pašeráka a nic nenajde, musí se pašerák vrátit zpět do mimo celnici a zahraničí. Pokud celníci chytí pašeráka a najdou předmět, pašeráci prohráli.\n");
 	}
 
 	 else if( strcmp(nahledinput,"#17") == 0 || strcmp(nahledinput,"evilmultitasking") == 0 ){
-	     printf("\t \t \t *************************** \n");
-	     printf("\t \t \t *    EVIL MULTITASKING    * \n");
-	     printf("\t \t \t *************************** \n");
-	     printf("REKVIZITY: tři a více tenisáků\n");
-	     printf("PRAVIDLA: Hráči se postaví do kruhu a hází si mezi sebou tenisáky. Mínusový bod dostane ten, kdo tenisák nechytí, nebo ho hodí tak, že nejde chytit. Taky ho však dostane ten, kdo má u sebe víc než jeden tenisák najednou. Vyhrává ten, kdo má nejméně mínusových bodů na konci hry. Smysl této hry spočívá v tom, že se hráči spiknou proti jiným hráčům a hodí mu několik tenisáků najednou a on musí reagovat rychle.\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t *************************** \n");
+	    printf("\t \t \t *    EVIL MULTITASKING    * \n");
+	    printf("\t \t \t *************************** \n");
+	    printf("REKVIZITY: tři a více tenisáků\n");
+	    printf("PRAVIDLA: Hráči se postaví do kruhu a hází si mezi sebou tenisáky. Mínusový bod dostane ten, kdo tenisák nechytí, nebo ho hodí tak, že nejde chytit. Taky ho však dostane ten, kdo má u sebe víc než jeden tenisák najednou. Vyhrává ten, kdo má nejméně mínusových bodů na konci hry. Smysl této hry spočívá v tom, že se hráči spiknou proti jiným hráčům a hodí mu několik tenisáků najednou a on musí reagovat rychle.\n");
 	}  
 	else if( strcmp(nahledinput,"#18") == 0 || strcmp(nahledinput,"plácačka") == 0 ){
-	     printf("\t \t \t ***************** \n");
-	     printf("\t \t \t *   PLÁCAČKA    * \n");
-	     printf("\t \t \t ***************** \n");
-	     printf("REKVIZITY: - \n");
-	     printf("PRAVIDLA: Utvoří se dvě řady hráčů, které se postaví naproti sobě ve vzdálenosti cca. 10 metrů. Hra probíhá tak, že na střídačku proti sobě řady posílají jednoho člověka. Vyslanec přijde k řadě lidí, kteří musí před sebe natáhnout obě ruce dlaněmi nahoru. Vyslanec poté musí plácnout tři dlaně z druhé řady. Jakmile plácne třetí, stane se jeho cílem doběhnout za svoji řadu a cílem plánutého se stane se ho dotknout. Komu se cíl podaří, ten konvertuje toho druhého do své řady. Hra skončí, až zbyde jen jedna řada (nebo tak, že zbyde jen člověk se dvěma rukama, kterého nebude moci druhá řada plácnout, a tak prohraje).\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ***************** \n");
+	    printf("\t \t \t *   PLÁCAČKA    * \n");
+	    printf("\t \t \t ***************** \n");
+	    printf("REKVIZITY: - \n");
+	    printf("PRAVIDLA: Utvoří se dvě řady hráčů, které se postaví naproti sobě ve vzdálenosti cca. 10 metrů. Hra probíhá tak, že na střídačku proti sobě řady posílají jednoho člověka. Vyslanec přijde k řadě lidí, kteří musí před sebe natáhnout obě ruce dlaněmi nahoru. Vyslanec poté musí plácnout tři dlaně z druhé řady. Jakmile plácne třetí, stane se jeho cílem doběhnout za svoji řadu a cílem plánutého se stane se ho dotknout. Komu se cíl podaří, ten konvertuje toho druhého do své řady. Hra skončí, až zbyde jen jedna řada (nebo tak, že zbyde jen člověk se dvěma rukama, kterého nebude moci druhá řada plácnout, a tak prohraje).\n");
 	}
 
 	  else if( strcmp(nahledinput,"#19") == 0 || strcmp(nahledinput,"tramvaj") == 0 ){
-	     printf("\t \t \t ********************************** \n");
-	     printf("\t \t \t *   TRAMVAJ / HOŘÍCÍ MRAKODRAP   * \n");
-	     printf("\t \t \t ********************************** \n");
-	     printf("REKVIZITY: lano \n");
-	     printf("PRAVIDLA: Utvořte kruh z lana, do kterého si stoupnou všichni hráči. Je to hořící mrakodrap, ze kterého není úniku. Naštěstí přilétá vrtulník, ale v něm je místo pouze na jednoho hráče. Hráči se tedy snaží vytlačit ostatní z kruhu, aby vrtulník zachránil právě je.\n");
-	     printf("POZN.: Určete jasně hranici vypadnutí z mrakodrapu, aby nenastaly sporné situace. Např. obě nohy ven z kruhu, polovina těla... Můžete také určit soudce, který bude nad hrou dohlížet a sporné případy rozhodovat.\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ********************************** \n");
+	    printf("\t \t \t *   TRAMVAJ / HOŘÍCÍ MRAKODRAP   * \n");
+	    printf("\t \t \t ********************************** \n");
+	    printf("REKVIZITY: lano \n");
+	    printf("PRAVIDLA: Utvořte kruh z lana, do kterého si stoupnou všichni hráči. Je to hořící mrakodrap, ze kterého není úniku. Naštěstí přilétá vrtulník, ale v něm je místo pouze na jednoho hráče. Hráči se tedy snaží vytlačit ostatní z kruhu, aby vrtulník zachránil právě je.\n");
+	    printf("POZN.: Určete jasně hranici vypadnutí z mrakodrapu, aby nenastaly sporné situace. Např. obě nohy ven z kruhu, polovina těla... Můžete také určit soudce, který bude nad hrou dohlížet a sporné případy rozhodovat.\n");
 	  }
 
 
 	  else if( strcmp(nahledinput,"#20") == 0 || strcmp(nahledinput,"australskýfotbal") == 0 ){
-	     printf("\t \t \t ************************ \n");
-	     printf("\t \t \t *   AUSTRALSKÝ FOTBAL   * \n");
-	     printf("\t \t \t ************************* \n");
-	     printf("REKVIZITY: tenisák\n");
-	     printf("PRAVIDLA: Hráči se postaví do kruhu (=na obvod pomyslné kružnice) čelem ven a tak, aby se dotýkali nohama. Potom se shýbnou, aby se koukali mezi rozkročeným nohama. Jejich rozkročené nohy jsou branky. Dovnitř se hodí míč a hráči se snaží prohodit míč brankami ostatních. Pokud hráči někdo prohodí míč mezi nohama, nebo se hráč narovná, ztrácí jednu ruku, a když nemá ruku, tak vypadává. Hráči nesmí střílet na lidi těsně vedle sebe, takže vyhrávají poslední tři lidé.\n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("________________________________________________________________________________________________________________ \n");
+	    printf("\t \t \t ************************ \n");
+	    printf("\t \t \t *   AUSTRALSKÝ FOTBAL   * \n");
+	    printf("\t \t \t ************************* \n");
+	    printf("REKVIZITY: tenisák\n");
+	    printf("PRAVIDLA: Hráči se postaví do kruhu (=na obvod pomyslné kružnice) čelem ven a tak, aby se dotýkali nohama. Potom se shýbnou, aby se koukali mezi rozkročeným nohama. Jejich rozkročené nohy jsou branky. Dovnitř se hodí míč a hráči se snaží prohodit míč brankami ostatních. Pokud hráči někdo prohodí míč mezi nohama, nebo se hráč narovná, ztrácí jednu ruku, a když nemá ruku, tak vypadává. Hráči nesmí střílet na lidi těsně vedle sebe, takže vyhrávají poslední tři lidé.\n");
 
 	  }
   
