@@ -26,13 +26,13 @@ int main() {
 printf("      __/ ___ _    ___ _         _    __            ___ __     _/    _      ___      _   /   __ ___        _  _  \n");
 printf("  \\  / |   | |_   | | |_   \\  / |_   (_  |/  /\\  | | | (_  |/ |_    | \\  /\\  |  /\\  |_)  /\\   /  |    |_| |_ |_) \n");
 printf("   \\/ _|_  | |_ \\_| | |_    \\/  |_   __) |\\ /--\\ |_| | __) |\\ |_    |_/ /--\\ | /--\\ |_) /--\\ /_ _|_   | | |_ | \\ \n");
-printf("\nTento program slouží k pomoci s přípravou programu na             /\\       iFiltrační kritéria:             l \n");  
-printf("skautské družinovky či výpravy, jmenovitě s přípravou            (  )      i                                   l  \n");
-printf("krátkých her s různým účelem. Obsahuje databázi her,          .--.\\/.--.   i      \n");
-printf("ve které lze vyhledávat podle nejrůznějších kritérií.        (/`\\_\\/_/`\\)  i         \n");
-printf("Narozdíl od většiny jiných herníků se zde vyskytují hry      '  {____}  '  i     \n");
-printf("ozkoušené, a tak se nebudete probírat haldou nechtěných her.   ,_//\\\\_,    i     \n");
-printf("Program ovládáte příkazy, pro začátek zkuste napsat \"help\".     '-\\/-'     i     \n");
+printf("\nTento program slouží k pomoci s přípravou programu na             /\\       Příkazy, které můžete zkusit: \n");  
+printf("skautské družinovky či výpravy, jmenovitě s přípravou            (  )      help --> nápověda                    \n");
+printf("krátkých her s různým účelem. Obsahuje databázi her,          .--.\\/.--.   hry --> seznam všech her  \n");
+printf("ve které lze vyhledávat podle nejrůznějších kritérií.        (/`\\_\\/_/`\\)  filtr --> vyhledávání         \n");
+printf("Narozdíl od většiny jiných herníků se zde vyskytují hry      '  {____}  '  #ID --> hashtag a číslo vyvolá hru     \n");
+printf("ozkoušené, a tak se nemusíte probírat haldou nechtěných her.   ,_//\\\\_,    cisto --> vyčistí obrazovku     \n");
+printf("Program se ovládá psaním příkazů, myš Vám bohužel nepomůže.     '-\\/-'          \n");
 printf("Zde pište příkazy: \n");
 
 
@@ -170,15 +170,8 @@ FILTROVANI:printf("Zadejte vaše požadované vyhledávací kritéria (nebo help
 	if(bypass ==1){ /* Zobrazí celý seznam  */
 		bool h=1; bool z=1;bool vyzv=1; bool beh = 1; bool b=1;bool p=1;bool m=1;bool sp=1;bool ch=1;bool l=1;bool lk=1;bool kl=1;bool zsch=1;bool psch=1;bool ksch=1;bool vsch=1;bool vlak=1;bool bez=1; bool srek=1; bool nic=1;bool noc=1;
 
-		goto ZOBRAZ;
+		goto ZOBRAZ;  // jsme připraveni zobrazit seznam her
 	}
-//	printf("PARAMETRY:");if(h==1){printf("hra, ");}if(z==1){printf("závod, ");}if(vyzv==1){printf("výzva, ");}if(beh==1){printf("běhačka, ");}if(b==1){printf("brutální, ");}if(p==1){printf("pohodová, ");}if(m==1){printf("přemýšlecí, ");}if(sp==1){printf("speciální, ");}if(ch==1){printf("za pochodu, ");}if(vlak==1){printf("do vlaku, ");}if(l==1){printf("do lesa, ");}if(lk==1){printf("na louku, ");}if(kl==1){printf("do klubovny, ");}if(zsch==1){printf("na začátek schůzky, ");}if(psch==1){printf("doprostřed schůzky, ");}if(ksch==1){printf("na konec schůzky, ");}if(vsch==1){printf("na ven na schůzku, ");}if(bez==1){printf("bez speciálních rekvizit, ");}if(srek==1){printf("s rekvizitami, ");}if(nic==1){printf("bez ničeho, ");}if(noc==1){printf("noční, ");}printf("\n");
-
-
-
-
-
-
 
 
 
