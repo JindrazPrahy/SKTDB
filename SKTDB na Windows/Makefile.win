@@ -1,0 +1,33 @@
+# Project: SKTDB
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+RES      = SKTDB_private.res
+OBJ      = SKTDB.o $(RES)
+LINKOBJ  = SKTDB.o $(RES)
+LIBS     = -static-libgcc
+INCS     = 
+CXXINCS  = 
+BIN      = SKTDB.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+SKTDB.o: SKTDB.c
+	$(CC) -c SKTDB.c -o SKTDB.o $(CFLAGS)
+
+SKTDB_private.res: SKTDB_private.rc 
+	$(WINDRES) -i SKTDB_private.rc --input-format=rc -o SKTDB_private.res -O coff 
+
