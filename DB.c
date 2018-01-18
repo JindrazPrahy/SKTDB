@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 /*  čeština */
-int aa=160;int cz=159;int ii=161;int uu=163;int ee=130;int ie=216;int rz=253;int uk=133;int oo=162;int sz=231;int tj=156;int zs=167 ;int yy= 236;
+int aa=160;int cz=159;int ii=161;int uu=163;int ee=130;int ie=216;int rz=253;int uk=133;int oo=162;int sz=231;int tj=156;int zs=167 ;int yy= 236;int nj =229;int NJ = 213;
 int II = 214; int AA=181;int EE=144;int TJ=155;int ZS=166;int IE=183;int SZ=230;int RZ=252;int CZ=428;
 
 
@@ -33,11 +33,11 @@ printf("      __/ ___ _    ___ _         _    __            ___ __     _/    _  
 printf("  \\  / |   | |_   | | |_   \\  / |_   (_  |/  /\\  | | | (_  |/ |_    | \\  /\\  |  /\\  |_)  /\\   /  |    |_| |_ |_) \n");
 printf("   \\/ _|_  | |_ \\_| | |_    \\/  |_   __) |\\ /--\\ |_| | __) |\\ |_    |_/ /--\\ | /--\\ |_) /--\\ /_ _|_   | | |_ | \\ \n");
 printf("\nTento program slouží k pomoci s přípravou programu na             /\\       Příkazy, které můžete zkusit: \n");  
-printf("skautské družinovky či výpravy, jmenovitě s přípravou            (  )      help --> nápověda                    \n");
+printf("skautské družinovky či výpravy, jmenovitě s přípravou            (  )      help --> nápověda      \n");
 printf("krátkých her s různým účelem. Obsahuje databázi her,          .--.\\/.--.   hry --> seznam všech her  \n");
-printf("ve které lze vyhledávat podle nejrůznějších kritérií.        (/`\\_\\/_/`\\)  filtr --> vyhledávání         \n");
-printf("Narozdíl od většiny jiných herníků se zde vyskytují hry      '  {____}  '  #ID --> hashtag a číslo ukáže konkrétní hru    \n");
-printf("ozkoušené, a tak se nemusíte probírat haldou nechtěných her.   ,_//\\\\_,    cisto --> vyčistí obrazovku     \n");
+printf("ve které lze vyhledávat podle nejrůznějších kritérií.        (/`\\_\\/_/`\\)  filtr --> vyhledávání     \n");
+printf("Narozdíl od většiny jiných herníků se zde vyskytují hry      '  {____}  '  #ID --> hashtag a číslo zobrazí hru\n");
+printf("ozkoušené, a tak se nemusíte probírat haldou nechtěných her.   ,_//\\\\_,    cisto --> vyčistí obrazovku\n");
 printf("Program se ovládá psaním příkazů, myš Vám bohužel nepomůže.     '-\\/-'          \n");
 printf("Zde pište příkazy: \n");
 
@@ -92,7 +92,7 @@ if(strncmp(input,"#",1)==0){
 	goto LOOP;
 }
 /* Zobrazování her podle názvu */
-if(strcmp(input,"dementball")== 0 || (strcmp(input,"najelena")== 0 ) || (strcmp(input,"chaos")== 0 ) || strcmp(input,"indianskyfotbal") == 0 || (strcmp(input,"komar") == 0 ) || strcmp(input,"kikikokokeke") == 0  || strcmp(input,"maso") == 0 || strcmp(input,"talismanek") == 0 || strcmp(input,"kralmidoriyamy") ==0 || strcmp(input, "aliby") == 0 || strcmp(input,"improvizace") == 0 || strcmp(input,"fotbika") == 0 || strcmp(input,"komandohopsando") == 0 || strcmp(input,"elektrika") == 0 || strcmp(input,"cinkacka") == 0 || strcmp(input,"paserak") == 0 || strcmp(input,"evilmultitasking") == 0 || strcmp(input,"placacka") == 0 || strcmp(input,"tramvaj") == 0 || strcmp(input,"australskyfotbal") == 0 ) {
+if(strcmp(input,"dementball")== 0 || (strcmp(input,"najelena")== 0 ) || (strcmp(input,"chaos")== 0 ) || strcmp(input,"indianskyfotbal") == 0 || (strcmp(input,"komar") == 0 ) || strcmp(input,"kikikokokeke") == 0  || strcmp(input,"maso") == 0 || strcmp(input,"talismanek") == 0 || strcmp(input,"kralmidoriyamy") ==0 || strcmp(input, "aliby") == 0 || strcmp(input,"improvizace") == 0 || strcmp(input,"fotbika") == 0 || strcmp(input,"komandohopsando") == 0 || strcmp(input,"elektrika") == 0 || strcmp(input,"cinkacka") == 0 || strcmp(input,"paserak") == 0 || strcmp(input,"evilmultitasking") == 0 || strcmp(input,"placacka") == 0 || strcmp(input,"tramvaj") == 0 || strcmp(input,"australskyfotbal") == 0 || strcmp(input,"csr") == 0) {
    nahled(input);
 	goto LOOP;
 }
@@ -100,7 +100,7 @@ if(strcmp(input,"dementball")== 0 || (strcmp(input,"najelena")== 0 ) || (strcmp(
 if(strcmp(input,"autor") == 0 || strcmp(input, "author") == 0 ){    /* o autorovi  			18+10 */
 printf("		    _____________________________ \n");
 printf("		   |                             |\n");
-printf("		   |    SKTDB 2.0    18. 1. 2018 | \n");
+printf("		   |    SKTDB 2.1    18. 1. 2018 | \n");
 printf("		   |                             |\n");
 printf("		   |       JINDŘICH DUŠEK        |\n");
 printf("		   |_____________________________|\n \n");
@@ -171,6 +171,7 @@ printf("za pochodu (ch), do lesa (l), na louku nebo plácek (lk), do místnosti 
 printf("na začátek schůzky (zsch), doprostřed schůzky (psch), na konec schůzky (ksch), na ven na schůzce (vsch) \n");
 printf("bez speciálních rekvizit (bez), s rekvizitami (srek), bez čehokoliv (nic) \n");
 printf("noční hry (noc) \n");
+printf("doba trvání hry (cas) nebo jen příbližně (pcas)\n");
 printf("PRO HLEDÁNÍ NAPIŠTE: hledat \n");
 printf("Zde pište příkazy: \n");
 	  		goto FILTROVANI;
@@ -206,7 +207,7 @@ bool komhops = false;         bool elektrika = false;
 bool cink = false;            bool paserak = false;
 bool evmul  = false;          bool placacka = false;
 bool tramvaj = false;         bool ausfot = false;
-
+bool csr = false;
 
 ZOBRAZ: 
 printf("________________________________________________________________________________________________________________ \n");
@@ -275,7 +276,7 @@ printf("NA KTERÉ NIC NEPOTŘEBUJETE ");
 	/* časový filtr, který nejdřív hodí­všechny hry s ok časem true */
 	for (t = mint; t <= maxt; t++) {
 	if ( (16 >= t) && (t >= 9 ) ){
-		komar = true; najelena = true; kikikokokeke = true; dementball = true; maso = true; kralnidoriamy = true; fotbika = true; komhops = true; elektrika = true; cink = true; evmul = true; placacka = true; tramvaj = true; ausfot = true;
+		komar = true; najelena = true; kikikokokeke = true; dementball = true; maso = true; kralnidoriamy = true; fotbika = true; komhops = true; elektrika = true; cink = true; evmul = true; placacka = true; tramvaj = true; ausfot = true; csr = true;
 	}
 	if ( (31 >= t) && (t >= 9) ){
 		 talismanek = true; indball = true; aliby = true; impro = true;
@@ -289,20 +290,22 @@ printf("NA KTERÉ NIC NEPOTŘEBUJETE ");
            	  ;
       	}
 	if(z == true){ /* závod */
-		dementball = false; najelena=false; chaos =false;indball = false; kikikokokeke = false; aliby = false; kralnidoriamy = false;
+		dementball = false; najelena=false; chaos =false;indball = false; kikikokokeke = false; aliby = false; kralnidoriamy = false;csr = false;
 	}
 	if(beh == true){ /* běhačka */
-	dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; aliby = false; impro = false; komhops = false; elektrika = false; cink = false; evmul = false; ausfot = false;
+	dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; aliby = false; impro = false; komhops = false; elektrika = false; cink = false; evmul = false; ausfot = false;csr = false;
 	}
 	if(vyzv == true){ /* výzva */
-		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;csr = false;
 	}
 	if(b == true){/* brutální */
-		dementball = false; najelena=false;indball = false;indball = false;komar = false; kikikokokeke = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; ausfot = false;
+		dementball = false; najelena=false;indball = false;indball = false;komar = false; kikikokokeke = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; ausfot = false;csr = false;
+
 
 	}
 	if(p == true){/* pohodový */
-		chaos =false;indball = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; fotbika = false; elektrika = false; cink = false; paserak = false; evmul = false; tramvaj = false; ausfot = false;
+		chaos =false;indball = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; fotbika = false; elektrika = false; cink = false; paserak = false; evmul = false; tramvaj = false; ausfot = false;csr = false;
+
 	}
 	if(m == true){ /* přemýšlecí */
 		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; fotbika = false; elektrika = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
@@ -311,22 +314,22 @@ printf("NA KTERÉ NIC NEPOTŘEBUJETE ");
 		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
 	}
 	if(ch == true){ /* za pochodu */
-		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;csr = false;
 
 	}
 	if(l == true){ /* do lesa */
-		dementball = false; najelena=false; chaos =false;indball = false;komar = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
-  
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; maso = false; talismanek = false; kralnidoriamy = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;csr = false;
+ 
 	}
 	if(lk == true){ /* na louku */
-		dementball = false; najelena=false; chaos =false;komar = false; talismanek = false; aliby = false; fotbika = false; komhops = false; elektrika = false; cink = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+		dementball = false; najelena=false; chaos =false;komar = false; talismanek = false; aliby = false; fotbika = false; komhops = false; elektrika = false; cink = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;csr = false;
 
 	}
 	if(kl == true){ /* do místnosti */
 		indball = false; kikikokokeke = false; talismanek = false; kralnidoriamy = false; paserak = false; evmul = false; placacka = false; tramvaj = false;
 	}
 	if(vlak == true){ /* ve vlaku */
-		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;csr = false;
 
 	} 
 	if(zsch == true){ /* začátek schůzky */
@@ -344,7 +347,7 @@ printf("NA KTERÉ NIC NEPOTŘEBUJETE ");
 		dementball = false; chaos =false;komar = false; maso = false; aliby = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; ausfot = false;
 	}
 	if(bez == true){ /* bez speciálních rekvizit */
-		dementball = false;indball = false;komar = false; maso = false; talismanek = false;
+		dementball = false;indball = false;komar = false; maso = false; talismanek = false;csr = false;
 	}
 	if(srek == true){ /* s rekvizitami */
 		najelena=false; chaos =false;komar = false; kikikokokeke = false; aliby = false; kralnidoriamy = false; impro = false; komhops = false; placacka = false;
@@ -354,7 +357,7 @@ printf("NA KTERÉ NIC NEPOTŘEBUJETE ");
 
 	}
 	if(noc == true){ /*noční hry */
-		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;
+		dementball = false; najelena=false; chaos =false;indball = false;komar = false; kikikokokeke = false; maso = false; talismanek = false; aliby = false; kralnidoriamy = false; impro = false; fotbika = false; komhops = false; elektrika = false; cink = false; paserak = false; evmul = false; placacka = false; tramvaj = false; ausfot = false;csr = false;
 
 	}
 
@@ -521,6 +524,14 @@ printf("%d",counter);
 printf(".");
       }
 printf("............#20-AUSTRALSKÝ FOTBAL\n" ); 
+    counter++;
+    } 
+    if(csr == 1          ){ 
+printf("%d",counter);
+      if(counter<=9){
+printf(".");
+      }
+printf("............#21-OBSAZOVÁNÍ ČESKA\n" ); 
     counter++;
     } 
 printf("Zde pište příkazy: \n");
@@ -962,6 +973,28 @@ printf("mezi nohama, nebo se hráč narovná, ztrácí jednu ruku, a když nemá
 printf("střílet na lidi těsně vedle sebe, takže vyhrávají poslední tři lidé.\n");
 printf("Zde pište příkazy: \n");
 	  }
+	  else if( strcmp(nahledinput,"#21") == 0 || strcmp(nahledinput,"csr") == 0 ){
+printf("________________________________________________________________________________________________________________ \n");
+printf("________________________________________________________________________________________________________________ \n");
+printf("                                               \t  _________  \n");
+printf("____ ___  ____ ____ ___  ____ _  _ __/_ _  _ / \t |`.       | \n");
+printf("|  | |__] [__  |__|   /  |  | |  | |__| |\\ | | \t |..>------| \n");
+printf("|__| |__] ___] |  |  /__ |__|  \\/  |  | | \\| | \t |.';;;;;;;| \n");
+printf("REKVIZITY: lano\n");
+printf("PRAVIDLA: Rozdělte hráče na dva týmy v poměru cca. 1:3 a na zem z provazu udělejte z provazu uzavřenou křivku\n");
+printf("ve tvaru mapy Česka. Větší tým symbolizuje nacisty a nesmí vstoupit dovnitř Česka, menší tým symbolizuje \n");
+printf("domobranu Česka a musí zůstat v Česku. Domobrana musí stát a nesmí pokrčovat kolena. Nacisti musí mít založené\n");
+printf("ruce a chodit v podřepu (jako když se tančí kozáček). Cílem nacistů je nohou postrčit hranice Česka co nejvíc\n");
+printf("dovnitř (a tím ho obsadit). Cílem Čechů je jim v tom bránit tím, že se jich dotknou rukama a takto vybitý nacista\n");
+printf("se musí jít oživit na předem určené místo. Hra končí časovým limitem nebo kapitulací Čechů (když už maj \n");
+printf("fakt málo místa\n");
+printf("ALTERNATIVNÍ PRAVIDLA:\n");
+printf("Pro zvětšení atmosféry mohou Němci mluvit pouze německy (nějaké základní fráze jsou třeba ,,Ja, nein, aber mein\n");
+printf("Führer, wiener schnitzel, Panzerfaust, Ordnung muss sein\'\') a Češi pouze česky nějaké slogany (,, Kdo neskáče\n");
+printf("není Čech\'\' apod.)\n");
+printf("Ke hře se hodí vysvětlit reálie [>-] či ji zapojit do jiného většího celku.\n");
+	  }
+
   
 	else{
 printf("Toto ID neexistuje\n");
